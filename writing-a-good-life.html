@@ -93,6 +93,8 @@
   .books{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:34px}
   .book{border-top:3px solid var(--terra);padding-top:16px}
   .book h3{font-size:1.15rem;margin-bottom:6px}
+  .book h3 a{color:inherit;border-bottom:1px solid rgba(188,95,51,.35)}
+  .book h3 a:hover{color:var(--terra)}
   .book p{font-size:.88rem;color:var(--ink-soft)}
   .honest{background:var(--ink);color:var(--cream)}
   .honest h2{color:var(--cream)}
@@ -123,6 +125,44 @@
   details summary::after{content:"+";color:var(--terra);font-size:1.5rem;font-weight:400}
   details[open] summary::after{content:"–"}
   details p{padding-top:12px;color:var(--ink-soft);font-size:.95rem;max-width:700px}
+  /* ---- week calendar ---- */
+  .wcal{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 4px 24px rgba(44,38,32,.07);overflow:hidden;margin:34px 0 10px}
+  .wcal-grid{display:grid;grid-template-columns:60px repeat(5,1fr)}
+  .wcal-head{padding:13px 6px 10px;text-align:center;border-bottom:2px solid rgba(188,95,51,.25);background:var(--cream-deep)}
+  .wcal-head .d{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;line-height:1.1}
+  .wcal-head .t{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);font-weight:500;margin-top:2px}
+  .wcal-corner{background:var(--cream-deep);border-bottom:2px solid rgba(188,95,51,.25)}
+  .wcal-times,.wcal-day{display:grid;grid-auto-rows:26px}
+  .wcal-times{border-right:1px solid var(--line)}
+  .wcal-times div{font-size:.62rem;color:var(--ink-soft);text-align:right;padding-right:8px;transform:translateY(-6px);font-weight:500}
+  .wcal-day{border-right:1px solid var(--line);position:relative}
+  .wcal-day:last-child{border-right:none}
+  .wcal-slot{border-bottom:1px solid rgba(44,38,32,.07)}
+  .wcal-slot.hr{border-bottom-color:rgba(44,38,32,.14)}
+  .wcal-slot:last-child{border-bottom:none}
+  .wcal-ev{position:absolute;left:4px;right:4px;border-radius:7px;padding:5px 7px 4px;font-size:.68rem;line-height:1.3;border-left:3px solid;overflow:hidden}
+  .wcal-ev .n{font-weight:600;font-size:.7rem}
+  .wcal-ev .tm{font-size:.62rem;opacity:.85}
+  .wcal-ev.improv{background:rgba(107,127,89,.16);border-left-color:var(--sage);color:#3E4A34}
+  .wcal-ev.lab{background:rgba(188,95,51,.16);border-left-color:var(--terra);color:#6E3319}
+  .wcal-ev.consult{background:rgba(44,38,32,.06);border-left-color:var(--ink-soft);color:var(--ink)}
+  .wcal-ev.feedback{background:rgba(201,162,39,.18);border-left-color:var(--gold);color:#6B5510}
+  .wcal-ghost{position:absolute;left:4px;right:4px;border:1.5px dashed rgba(107,127,89,.5);border-radius:7px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--sage);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.78rem;line-height:1.35;padding:6px}
+  .wcal-break{grid-column:1/-1;height:28px;background:repeating-linear-gradient(-45deg,rgba(44,38,32,.045) 0,rgba(44,38,32,.045) 6px,transparent 6px,transparent 14px),var(--cream-deep);display:flex;align-items:center;justify-content:center;color:var(--ink-soft);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .wcal-legend{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;margin-top:16px;font-size:.78rem;color:var(--ink-soft)}
+  .wcal-legend span{display:inline-flex;align-items:center;gap:7px}
+  .wcal-chip{width:12px;height:12px;border-radius:3px;display:inline-block}
+  .wcal-chip.improv{background:rgba(107,127,89,.4);border-left:3px solid var(--sage)}
+  .wcal-chip.lab{background:rgba(188,95,51,.4);border-left:3px solid var(--terra)}
+  .wcal-chip.consult{background:rgba(44,38,32,.12);border-left:3px solid var(--ink-soft)}
+  .wcal-chip.feedback{background:rgba(201,162,39,.4);border-left:3px solid var(--gold)}
+  .wcal-tz{text-align:center;font-size:.74rem;color:var(--ink-soft);margin-top:10px;opacity:.85}
+  @media(max-width:640px){
+    .wcal-grid{grid-template-columns:44px repeat(5,1fr)}
+    .wcal-head .t{display:none}
+    .wcal-ev .tm{display:none}
+    .wcal-ghost{font-size:.62rem}
+  }
   .final{text-align:center;background:linear-gradient(180deg,var(--cream),var(--cream-deep))}
   .final h2{max-width:700px;margin:0 auto 16px}
   .final p{max-width:540px;margin:0 auto 32px;color:var(--ink-soft)}
@@ -157,8 +197,8 @@
     <p class="lede">Writing with presence, play, and perspective is a way of being. Seven Wednesdays of mindful free-writing, life design, and small group connections that generate insight and accountability.</p>
     <div class="hero-meta">
       <span><strong>Seven Wednesdays</strong>July 8 – August 19</span>
-      <span><strong>Noon MST or 6pm MST</strong>Choose your group</span>
-      <span><strong>3+ hours/week</strong>Reading &amp; writing that pays dividends</span>
+      <span><strong>Noon or 8pm ET</strong>Choose your group</span>
+      <span><strong>Connect Across the World</strong>Alumni in nine countries</span>
     </div>
     <div class="cta-row">
       <a class="btn btn-solid" href="#pricing">Enroll — from $59/month</a>
@@ -260,18 +300,104 @@
   </div>
 </section>
 
-<section class="rhythm" style="padding-top:0">
+<section class="rhythm" id="rhythm" style="padding-top:0">
   <div class="wrap">
     <p class="eyebrow">The Rhythm</p>
     <h2>What a week looks like</h2>
-    <p><strong>Wednesday:</strong> your 75-90 minute group gathering (noon or 6pm MST, on Zoom). We begin with a timed, unedited freewrite. Then we share what we wrote — not to perform, but to practice being seen. Deep listening follows.</p>
-    <p><strong>Between sessions:</strong> plan on 3+ hours of reading and writing that pays dividends — morning pages, the week's chapters, your artifact. Open hours Monday and Wednesday afternoons (2:45–4:00 MST) for 1:1s; Fridays (2:45–4:00 MST) for emergent group sessions. Improv Wisdom Labs on Mondays at 10:00-10:50 MST.</p>
+    <p><strong>Wednesday</strong> is the heart of it: your 75–90 minute group gathering (noon or 8pm ET, on Zoom). We begin with a timed, unedited freewrite. Then we share what we wrote — not to perform, but to practice being seen. Deep listening follows.</p>
+    <p><strong>Around it,</strong> the week has a shape: Improv Wisdom Labs on Mondays at noon ET, Creative Consulting Hours for 1:1s on Monday and Wednesday afternoons, Friday Feedback to close the week — and 3+ hours of reading and writing that pays dividends, on your own time. Tuesdays and Thursdays stay open on purpose.</p>
+
+    <div class="wcal">
+      <div class="wcal-grid">
+        <div class="wcal-corner"></div>
+        <div class="wcal-head"><div class="d">Monday</div><div class="t">Play · Presence · Purpose</div></div>
+        <div class="wcal-head"><div class="d">Tuesday</div><div class="t">Yours to Make</div></div>
+        <div class="wcal-head"><div class="d">Wednesday</div><div class="t">Gather with your People</div></div>
+        <div class="wcal-head"><div class="d">Thursday</div><div class="t">Yours to Make</div></div>
+        <div class="wcal-head"><div class="d">Friday</div><div class="t">Perspective · Projects · Process</div></div>
+
+        <div class="wcal-times">
+          <div></div><div>Noon</div><div></div><div>1 pm</div><div></div><div>2 pm</div>
+          <div></div><div>3 pm</div><div></div><div>4 pm</div><div></div><div>5 pm</div>
+        </div>
+
+        <div class="wcal-day">
+          <div class="wcal-slot"></div><div class="wcal-slot hr"></div><div class="wcal-slot"></div><div class="wcal-slot hr"></div>
+          <div class="wcal-slot"></div><div class="wcal-slot hr"></div><div class="wcal-slot"></div><div class="wcal-slot hr"></div>
+          <div class="wcal-slot"></div><div class="wcal-slot hr"></div><div class="wcal-slot"></div><div class="wcal-slot hr"></div>
+          <div class="wcal-ev improv" style="top:28px;height:48px"><div class="n">Improv Wisdom Lab</div><div class="tm">Noon – 1 pm</div></div>
+          <div class="wcal-ev consult" style="top:184px;height:100px"><div class="n">Creative Consulting Hours</div><div class="tm">3 – 5 pm · book a 1:1</div></div>
+        </div>
+
+        <div class="wcal-day">
+          <div class="wcal-slot"></div><div class="wcal-slot hr"></div><div class="wcal-slot"></div><div class="wcal-slot hr"></div>
+          <div class="wcal-slot"></div><div class="wcal-slot hr"></div><div class="wcal-slot"></div><div class="wcal-slot hr"></div>
+          <div class="wcal-slot"></div><div class="wcal-slot hr"></div><div class="wcal-slot"></div><div class="wcal-slot hr"></div>
+          <div class="wcal-ghost" style="top:56px;height:180px">open studio —<br>reading &amp; writing<br>that pays dividends</div>
+        </div>
+
+        <div class="wcal-day">
+          <div class="wcal-slot"></div><div class="wcal-slot hr"></div><div class="wcal-slot"></div><div class="wcal-slot hr"></div>
+          <div class="wcal-slot"></div><div class="wcal-slot hr"></div><div class="wcal-slot"></div><div class="wcal-slot hr"></div>
+          <div class="wcal-slot"></div><div class="wcal-slot hr"></div><div class="wcal-slot"></div><div class="wcal-slot hr"></div>
+          <div class="wcal-ev lab" style="top:28px;height:61px"><div class="n">Live Small Group</div><div class="tm">Noon – 1:15 pm</div></div>
+          <div class="wcal-ev consult" style="top:184px;height:100px"><div class="n">Creative Consulting Hours</div><div class="tm">3 – 5 pm · book a 1:1</div></div>
+        </div>
+
+        <div class="wcal-day">
+          <div class="wcal-slot"></div><div class="wcal-slot hr"></div><div class="wcal-slot"></div><div class="wcal-slot hr"></div>
+          <div class="wcal-slot"></div><div class="wcal-slot hr"></div><div class="wcal-slot"></div><div class="wcal-slot hr"></div>
+          <div class="wcal-slot"></div><div class="wcal-slot hr"></div><div class="wcal-slot"></div><div class="wcal-slot hr"></div>
+          <div class="wcal-ghost" style="top:56px;height:180px">open studio —<br>reading &amp; writing<br>that pays dividends</div>
+        </div>
+
+        <div class="wcal-day">
+          <div class="wcal-slot"></div><div class="wcal-slot hr"></div><div class="wcal-slot"></div><div class="wcal-slot hr"></div>
+          <div class="wcal-slot"></div><div class="wcal-slot hr"></div><div class="wcal-slot"></div><div class="wcal-slot hr"></div>
+          <div class="wcal-slot"></div><div class="wcal-slot hr"></div><div class="wcal-slot"></div><div class="wcal-slot hr"></div>
+          <div class="wcal-ev feedback" style="top:236px;height:48px"><div class="n">Friday Feedback</div><div class="tm">4 – 5 pm</div></div>
+        </div>
+
+        <div class="wcal-break">· · · evening · · ·</div>
+
+        <div class="wcal-times">
+          <div></div><div>8 pm</div><div></div><div>9 pm</div>
+        </div>
+        <div class="wcal-day">
+          <div class="wcal-slot"></div><div class="wcal-slot hr"></div><div class="wcal-slot"></div><div class="wcal-slot hr"></div>
+        </div>
+        <div class="wcal-day">
+          <div class="wcal-slot"></div><div class="wcal-slot hr"></div><div class="wcal-slot"></div><div class="wcal-slot hr"></div>
+        </div>
+        <div class="wcal-day">
+          <div class="wcal-slot"></div><div class="wcal-slot hr"></div><div class="wcal-slot"></div><div class="wcal-slot hr"></div>
+          <div class="wcal-ev lab" style="top:28px;height:61px"><div class="n">Live Small Group <em style="font-weight:400">(evening)</em></div><div class="tm">8 – 9:15 pm</div></div>
+        </div>
+        <div class="wcal-day">
+          <div class="wcal-slot"></div><div class="wcal-slot hr"></div><div class="wcal-slot"></div><div class="wcal-slot hr"></div>
+        </div>
+        <div class="wcal-day">
+          <div class="wcal-slot"></div><div class="wcal-slot hr"></div><div class="wcal-slot"></div><div class="wcal-slot hr"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wcal-legend">
+      <span><span class="wcal-chip lab"></span> Live Small Group (choose noon or 8pm)</span>
+      <span><span class="wcal-chip improv"></span> Improv Wisdom Lab</span>
+      <span><span class="wcal-chip feedback"></span> Friday Feedback</span>
+      <span><span class="wcal-chip consult"></span> Creative Consulting Hours</span>
+    </div>
+    <p class="wcal-tz">All times Eastern · all sessions live on Zoom</p>
+
     <p class="motto">"Wisdom creates time."</p>
+    <p class="eyebrow" style="margin-top:44px">Books &amp; Resources</p>
+    <p>Each week you'll receive an abundance of reading opportunities, writing invitations, and growth experiments to help you build momentum and keep going. If you're called to pick up any of the following books for additional support, they will enrich your journey. You'll also receive curated notes from class, plus private video recordings and transcripts for further learning and review.</p>
     <div class="books">
-      <div class="book"><h3>Writing Down the Bones</h3><p>Natalie Goldberg. Writing practice meets meditation practice, with a Zen flavor.</p></div>
-      <div class="book"><h3>Designing Your Life</h3><p>Burnett &amp; Evans. Life-design skills and powerful reframes for navigating transitions.</p></div>
-      <div class="book"><h3>The Artist's Way</h3><p>Julia Cameron. The cult-classic course of creative self-study. Spiritual, but grounded.</p></div>
-      <div class="book"><h3>Improv Wisdom</h3><p>Patricia Ryan Madson. Thirteen maxims for showing up before you're ready.</p></div>
+      <div class="book"><h3><a href="https://www.amazon.com/Writing-Down-Bones-Freeing-Writer/dp/1590302613" target="_blank" rel="noopener">Writing Down the Bones: Freeing the Writer Within</a></h3><p>Natalie Goldberg (1986). Delights at the intersection of writing practice and meditation practice, with a Zen Buddhist flavor.</p></div>
+      <div class="book"><h3><a href="https://www.amazon.com/Designing-Your-Life-Well-Lived-Joyful/dp/1101875321" target="_blank" rel="noopener">Designing Your Life: How to Build a Well-Lived, Joyful Life</a></h3><p>Burnett &amp; Evans (2016). "Life design skills" and powerful reframes for navigating life transitions.</p></div>
+      <div class="book"><h3><a href="https://www.amazon.com/Artists-Way-25th-Anniversary/dp/0143129252" target="_blank" rel="noopener">The Artist's Way: A Spiritual Path to Higher Creativity</a></h3><p>Julia Cameron (2016, 25th-anniversary edition). The cult-classic course of creative self-study. "Spiritual," but grounded in experience.</p></div>
+      <div class="book"><h3><a href="https://www.amazon.com/Improv-Wisdom-Dont-Prepare-Just/dp/1400081882" target="_blank" rel="noopener">Improv Wisdom: Don't Prepare, Just Show Up</a></h3><p>Patricia Ryan Madson (2005). Thirteen maxims for showing up before you're ready.</p></div>
     </div>
   </div>
 </section>
@@ -356,7 +482,7 @@
     </details>
     <details>
       <summary>What happens in a typical session?</summary>
-      <p>We begin with a mindful freewrite — timed, unedited, pen to paper. Then we share what we wrote, not to perform but to practice being seen. Deep listening follows. Sessions run 75 minutes on Zoom.</p>
+      <p>We begin with a brief check-in, move to a mindful freewriting session, then share, offer notes of loving kindness to see and be seen, and integrate insights and takeaways. Sessions typically run 75 minutes on Zoom.</p>
     </details>
     <details>
       <summary>What's the time commitment?</summary>
@@ -372,11 +498,11 @@
     </details>
     <details>
       <summary>Can my employer pay for this?</summary>
-      <p>Often, yes. The certificate documents up to 45 CE hours, and employers who value self-awareness, wellbeing, and communication have reimbursed past participants. Email <a href="mailto:sean@wisdomworkshop.io">sean@wisdomworkshop.io</a> for supporting materials.</p>
+      <p>Often, yes. The certificate documents up to 45 CE hours, and employers who value wellbeing have reimbursed past participants. Email <a href="mailto:sean@wisdomworkshop.io">sean@wisdomworkshop.io</a> for supporting materials.</p>
     </details>
     <details>
       <summary>I'm interested but not sure it's right for me.</summary>
-      <p>Start with a <a href="https://calendly.com/wisdomworkshop/15min">15-minute conversation</a>. Sean meets with every prospective participant before a cohort begins. It's not a sales call — it's how we learn about each other.</p>
+      <p>Start with a <a href="https://calendly.com/wisdomworkshop/15min">15-minute conversation</a>. Sean meets with most prospective participants before a cohort begins to see if it's a good fit.</p>
     </details>
   </div>
 </section>
