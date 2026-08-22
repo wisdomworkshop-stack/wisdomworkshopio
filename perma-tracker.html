@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Requirements Check Sheet · The Personal Master of Arts</title>
+<meta name="description" content="Track your perMA year: four seasonal workshops, the weekly process, monthly check-ins, the culmination project, and the commencement conversation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FAF6EF; --cream-deep:#F3ECDF; --ink:#2C2620; --ink-soft:#5C5347;
+    --terra:#BC5F33; --terra-deep:#9C4A24; --sage:#6B7F59; --gold:#C9A227;
+    --line:rgba(44,38,32,.14);
+    --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+    --sans:'DM Sans',-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.62;font-size:16px;-webkit-font-smoothing:antialiased}
+  body::after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.05;z-index:999;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");}
+  h1,h2,h3,h4,.serif{font-family:var(--serif);font-weight:600;line-height:1.18}
+  a{color:var(--terra)} a:hover{color:var(--terra-deep)}
+  .wrap{max-width:940px;margin:0 auto;padding:0 22px}
+  .eyebrow{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);font-weight:500}
+  .muted{color:var(--ink-soft)}
+  .small{font-size:.86rem}
+  .tiny{font-size:.76rem}
+
+  /* top bar */
+  header.bar{position:sticky;top:0;z-index:60;background:rgba(250,246,239,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar-inner{max-width:940px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:18px;justify-content:space-between;flex-wrap:wrap}
+  .brand{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--ink);text-decoration:none;line-height:1.2}
+  .brand small{display:block;font-family:var(--sans);font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);font-weight:400}
+  .bar-stat{display:flex;gap:18px;align-items:center;font-size:.8rem;color:var(--ink-soft);flex-wrap:wrap}
+  .bar-stat b{display:block;color:var(--ink);font-weight:500;font-size:.95rem;font-family:var(--serif)}
+  @media(max-width:620px){
+    .bar-inner{padding:10px 18px;gap:8px}
+    .bar-stat{width:100%;gap:14px;justify-content:space-between;font-size:.7rem}
+    .bar-stat b{display:inline;font-size:.82rem;margin-right:5px}
+    .bar-stat span:first-child{display:none}
+  }
+
+  /* hero */
+  .head{padding:44px 0 28px}
+  .head h1{font-size:clamp(2rem,5vw,3rem);margin:10px 0 8px}
+  .head p{color:var(--ink-soft);max-width:640px}
+
+  /* dashboard */
+  .dash{display:grid;grid-template-columns:190px 1fr;gap:34px;align-items:center;background:var(--cream-deep);border:1px solid var(--line);border-radius:20px;padding:30px;margin-bottom:34px}
+  @media(max-width:680px){.dash{grid-template-columns:1fr;gap:22px;text-align:center}}
+  .ring{position:relative;width:170px;height:170px;margin:0 auto}
+  .ring svg{transform:rotate(-90deg)}
+  .ring .rnum{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .ring .rnum b{font-family:var(--serif);font-size:2.6rem;font-weight:600;line-height:1}
+  .ring .rnum span{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px}
+  .dash-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:20px 18px}
+  @media(max-width:520px){.dash-meta{grid-template-columns:repeat(2,1fr)}}
+  .dm b{display:block;font-family:var(--serif);font-size:1.45rem;font-weight:600;line-height:1.1}
+  .dm span{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+
+  /* phase strip */
+  .phases{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:38px}
+  @media(max-width:600px){.phases{grid-template-columns:repeat(2,1fr)}}
+  .phase{border:1px solid var(--line);border-radius:12px;padding:14px 14px;background:#fff8;transition:.25s}
+  .phase.on{background:var(--terra);border-color:var(--terra);color:var(--cream)}
+  .phase.on .ph-m,.phase.on .ph-note{color:rgba(250,246,239,.82)}
+  .phase.done{background:rgba(107,127,89,.14);border-color:rgba(107,127,89,.4)}
+  .phase b{font-family:var(--serif);font-size:1.2rem;display:block}
+  .ph-m{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+  .ph-note{font-size:.78rem;color:var(--ink-soft);margin-top:6px;line-height:1.4}
+
+  /* cards */
+  .card{background:#fffb;border:1px solid var(--line);border-radius:18px;padding:28px;margin-bottom:22px}
+  .card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:6px}
+  .card h2{font-size:1.5rem}
+  .card h2 .rq{font-family:var(--sans);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);display:block;font-weight:500;margin-bottom:4px}
+  .card > p.req{font-size:.9rem;color:var(--ink-soft);margin-bottom:18px;max-width:640px}
+  .status{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;border-radius:999px;font-weight:500;white-space:nowrap}
+  .st-todo{background:rgba(92,83,71,.12);color:var(--ink-soft)}
+  .st-going{background:rgba(201,162,39,.2);color:#8a6d10}
+  .st-done{background:var(--sage);color:var(--cream)}
+  .st-risk{background:rgba(188,95,51,.16);color:var(--terra-deep)}
+
+  .meter{height:7px;background:rgba(44,38,32,.09);border-radius:999px;overflow:hidden;margin:6px 0 18px}
+  .meter i{display:block;height:100%;background:var(--terra);border-radius:999px;transition:width .4s ease}
+  .meter.ok i{background:var(--sage)}
+
+  /* checklist */
+  .check{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid rgba(92,83,71,.11)}
+  .check:first-of-type{border-top:none}
+  .check input[type=checkbox]{appearance:none;-webkit-appearance:none;flex:0 0 auto;width:21px;height:21px;margin-top:2px;border:1.5px solid rgba(188,95,51,.55);border-radius:6px;cursor:pointer;position:relative;background:#fff6;transition:.18s}
+  .check input[type=checkbox]:hover{border-color:var(--terra)}
+  .check input[type=checkbox]:checked{background:var(--sage);border-color:var(--sage)}
+  .check input[type=checkbox]:checked::after{content:"";position:absolute;left:6.5px;top:2.5px;width:5px;height:11px;border:solid var(--cream);border-width:0 2px 2px 0;transform:rotate(45deg)}
+  .check label{cursor:pointer;flex:1}
+  .check .ttl{font-weight:500;display:block}
+  .check .sub{font-size:.84rem;color:var(--ink-soft);display:block;margin-top:2px}
+  .check.is-done .ttl{color:var(--ink-soft)}
+  .opt{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);border:1px solid rgba(107,127,89,.5);border-radius:999px;padding:1px 8px;margin-left:8px;vertical-align:middle}
+
+  /* forms */
+  label.fl{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:5px;font-weight:500}
+  input[type=text],input[type=date],input[type=number],input[type=email],select,textarea{
+    width:100%;font-family:var(--sans);font-size:.95rem;color:var(--ink);background:#fff9;
+    border:1px solid var(--line);border-radius:10px;padding:10px 12px;transition:.18s}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--terra);background:#fff}
+  textarea{resize:vertical;min-height:70px;line-height:1.55}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:14px}
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;align-items:end}
+  .btn{display:inline-block;padding:11px 24px;border-radius:999px;font-family:var(--sans);font-weight:500;font-size:.88rem;border:1.5px solid var(--terra);background:var(--terra);color:var(--cream);cursor:pointer;transition:.2s;text-decoration:none;text-align:center}
+  .btn:hover{background:var(--terra-deep);border-color:var(--terra-deep);color:var(--cream)}
+  .btn.ghost{background:transparent;color:var(--terra)}
+  .btn.ghost:hover{background:rgba(188,95,51,.08);color:var(--terra-deep)}
+  .btn.sm{padding:7px 16px;font-size:.78rem}
+  .btn.danger{border-color:rgba(92,83,71,.4);background:transparent;color:var(--ink-soft)}
+  .btn.danger:hover{background:rgba(188,95,51,.1);color:var(--terra-deep);border-color:var(--terra)}
+  .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+
+  /* log table */
+  .table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:#fff8;margin-top:18px}
+  table{width:100%;border-collapse:collapse;font-size:.88rem;min-width:520px}
+  th{text-align:left;font-family:var(--serif);font-size:1rem;color:var(--terra-deep);padding:11px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
+  td{padding:10px 14px;border-bottom:1px solid rgba(92,83,71,.1);color:var(--ink-soft);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  td.n{color:var(--ink);font-weight:500;white-space:nowrap}
+  .del{background:none;border:none;color:var(--ink-soft);cursor:pointer;font-size:1.05rem;line-height:1;padding:2px 6px;border-radius:6px}
+  .del:hover{color:var(--terra-deep);background:rgba(188,95,51,.1)}
+  .empty{padding:22px 16px;text-align:center;color:var(--ink-soft);font-size:.88rem;font-style:italic}
+
+  .callout{border-left:3px solid var(--sage);background:rgba(107,127,89,.07);padding:14px 18px;border-radius:0 10px 10px 0;font-size:.88rem;color:var(--ink-soft);margin-top:16px}
+  .callout b{color:var(--ink);font-weight:500}
+  .warn{border-left-color:var(--terra);background:rgba(188,95,51,.07)}
+
+  .divider{text-align:center;margin:52px 0 26px}
+  .divider span{font-family:var(--serif);font-style:italic;color:var(--ink-soft);font-size:1.05rem}
+
+  footer{border-top:1px solid var(--line);margin-top:56px;padding:36px 0 60px;font-size:.84rem;color:var(--ink-soft)}
+  .foot-links{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px}
+
+  @media print{
+    header.bar,.btnrow,.addform,.del,footer .foot-links{display:none!important}
+    body{background:#fff;font-size:11pt}
+    .card{break-inside:avoid;background:#fff;border-color:#ccc}
+    body::after{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar-inner">
+    <a class="brand" href="perma.html">Wisdom Workshop<small>perMA Check Sheet</small></a>
+    <div class="bar-stat">
+      <span><b id="barName">—</b>Fellow</span>
+      <span><b id="barMonth">—</b>Month</span>
+      <span><b id="barPhase">—</b>Phase</span>
+      <span><b id="barPct">0%</b>Complete</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="head">
+    <p class="eyebrow">The Personal Master of Arts · 2026–2027</p>
+    <h1>Requirements Check Sheet</h1>
+    <p>Your twelve months, tracked honestly. Five requirements, four seasonal workshops, a weekly rhythm, and a culmination. Everything saves in this browser — nothing is sent anywhere. Export a Markdown record any time for your monthly check-in.</p>
+  </div>
+
+  <!-- ===== DASHBOARD ===== -->
+  <div class="dash">
+    <div class="ring">
+      <svg width="170" height="170" viewBox="0 0 170 170">
+        <circle cx="85" cy="85" r="74" fill="none" stroke="rgba(44,38,32,.1)" stroke-width="13"/>
+        <circle id="ringArc" cx="85" cy="85" r="74" fill="none" stroke="#BC5F33" stroke-width="13"
+                stroke-linecap="round" stroke-dasharray="465" stroke-dashoffset="465"
+                style="transition:stroke-dashoffset .6s ease,stroke .4s ease"/>
+      </svg>
+      <div class="rnum"><b id="ringPct">0%</b><span id="ringLbl">Requirements</span></div>
+    </div>
+    <div class="dash-meta">
+      <div class="dm"><b id="dmMonth">—</b><span>Month of 12</span></div>
+      <div class="dm"><b id="dmWorkshops">0 / 4</b><span>Workshops</span></div>
+      <div class="dm"><b id="dmCheckins">0 / 10</b><span>Check-ins</span></div>
+      <div class="dm"><b id="dmAttend">—</b><span>Review attendance</span></div>
+      <div class="dm"><b id="dmPractice">—</b><span>Practice average</span></div>
+      <div class="dm"><b id="dmDays">—</b><span>To culmination</span></div>
+    </div>
+  </div>
+
+  <!-- ===== PHASES ===== -->
+  <div class="phases" id="phaseStrip"></div>
+
+  <!-- ===== SETUP ===== -->
+  <div class="card" id="setup">
+    <div class="card-head">
+      <h2><span class="rq">Start here</span>Your contract &amp; entry</h2>
+    </div>
+    <p class="req">Admission runs through a single page: a contract naming the project you intend to complete, the daily practice that will carry it, and the people you want beside you.</p>
+    <div class="grid2">
+      <div><label class="fl" for="fName">Fellow name</label><input type="text" id="fName" placeholder="Your name"></div>
+      <div><label class="fl" for="fEmail">Email</label><input type="email" id="fEmail" placeholder="you@example.com"></div>
+    </div>
+    <div class="grid2">
+      <div>
+        <label class="fl" for="fSeason">Entry season (doorway)</label>
+        <select id="fSeason">
+          <option value="summer2026">Summer 2026 — begins July 8</option>
+          <option value="fall2026">Fall 2026 — begins September 16</option>
+          <option value="winter2027">Winter 2027 — begins January 20</option>
+        </select>
+      </div>
+      <div><label class="fl" for="fStart">Year begins (zero week)</label><input type="date" id="fStart"></div>
+      <div><label class="fl" for="fTarget">Daily practice target (days / 7)</label><input type="number" id="fTarget" min="1" max="7" step="1" value="5"></div>
+    </div>
+    <div style="margin-bottom:6px"><label class="fl" for="fProject">The project — the work that's yours to make</label>
+      <textarea id="fProject" placeholder="A manuscript, an album, a curriculum, a venture, a body of visual work, a sustained documented practice…"></textarea></div>
+    <div style="margin-top:14px"><label class="fl" for="fPractice">The daily practice that will carry it</label>
+      <input type="text" id="fPractice" placeholder="e.g. 45 minutes of morning pages before anything else"></div>
+    <div class="callout">Spring is culmination season — the studio months — not an entry point. Whichever doorway you enter, you take all four seasonal workshops across your twelve months.</div>
+  </div>
+
+  <div class="divider"><span>The five requirements</span></div>
+
+  <!-- ===== R1 WORKSHOPS ===== -->
+  <div class="card">
+    <div class="card-head">
+      <h2><span class="rq">Requirement One</span>Four seasonal workshops</h2>
+      <span class="status st-todo" id="s1">Not started</span>
+    </div>
+    <p class="req">Complete four seasonal seven-week workshops within your twelve months. One exception window is allowed — a missed season can be completed in month 13–15 by arrangement.</p>
+    <div class="meter"><i id="m1" style="width:0%"></i></div>
+    <div id="workshopList"></div>
+  </div>
+
+  <!-- ===== R2 WEEKLY PROCESS ===== -->
+  <div class="card">
+    <div class="card-head">
+      <h2><span class="rq">Requirement Two</span>The weekly process</h2>
+      <span class="status st-todo" id="s2">Not started</span>
+    </div>
+    <p class="req">Daily contracted practice, logged simply and honestly, plus the Collective Weekly Review. A 75% attendance floor across the year, with grace extended freely for life events.</p>
+    <div class="meter"><i id="m2" style="width:0%"></i></div>
+
+    <div class="addform">
+      <div class="grid3">
+        <div><label class="fl" for="wDate">Week of</label><input type="date" id="wDate"></div>
+        <div><label class="fl" for="wHit">I hit (of 7)</label><input type="number" id="wHit" min="0" max="7" step="1" placeholder="5"></div>
+        <div><label class="fl" for="wTarget">My goal was</label><input type="number" id="wTarget" min="0" max="7" step="1"></div>
+        <div>
+          <label class="fl" for="wCwr">Weekly Review</label>
+          <select id="wCwr"><option value="1">Attended</option><option value="0">Missed</option></select>
+        </div>
+      </div>
+      <div style="margin-top:12px"><label class="fl" for="wNote">What moved, what stalled, what I need</label>
+        <input type="text" id="wNote" placeholder="Optional — one honest line"></div>
+      <div class="btnrow"><button class="btn sm" id="addWeek">Log this week</button></div>
+    </div>
+
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Week of</th><th>Practice</th><th>Review</th><th>Note</th><th></th></tr></thead>
+        <tbody id="weekRows"></tbody>
+      </table>
+    </div>
+    <div id="attendNote"></div>
+  </div>
+
+  <!-- ===== R3 CHECK-INS ===== -->
+  <div class="card">
+    <div class="card-head">
+      <h2><span class="rq">Requirement Three</span>Monthly check-ins</h2>
+      <span class="status st-todo" id="s3">Not started</span>
+    </div>
+    <p class="req">At least ten one-on-one conferences across the year — part coaching conversation, part milestone review, in the third-generation form. Each ends with one commitment for the coming month, written down by both parties.</p>
+    <div class="meter"><i id="m3" style="width:0%"></i></div>
+
+    <div class="addform">
+      <div class="grid2">
+        <div><label class="fl" for="cDate">Date held</label><input type="date" id="cDate"></div>
+        <div><label class="fl" for="cWith">With</label><input type="text" id="cWith" placeholder="Sean · a senior fellow"></div>
+      </div>
+      <div style="margin-top:12px"><label class="fl" for="cCommit">The one commitment for the coming month</label>
+        <input type="text" id="cCommit" placeholder="Written down by both parties"></div>
+      <div style="margin-top:12px"><label class="fl" for="cLearn">What the facilitator is learning from this project</label>
+        <input type="text" id="cLearn" placeholder="Said out loud, every time — symmetry is a practice"></div>
+      <div class="btnrow"><button class="btn sm" id="addCheckin">Record check-in</button></div>
+    </div>
+
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Date</th><th>With</th><th>Commitment</th><th>Symmetry note</th><th></th></tr></thead>
+        <tbody id="checkinRows"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===== R4 CULMINATION ===== -->
+  <div class="card">
+    <div class="card-head">
+      <h2><span class="rq">Requirement Four</span>The culmination project</h2>
+      <span class="status st-todo" id="s4">Not started</span>
+    </div>
+    <p class="req">A finished, shareable whole-person project — any medium — publicly shared, accompanied by a final integration reflection of 1,500–3,000 words: what was made, what it cost, what it taught, what's next.</p>
+    <div class="meter"><i id="m4" style="width:0%"></i></div>
+    <div id="culmList"></div>
+
+    <div style="margin-top:18px" class="grid2">
+      <div><label class="fl" for="rWords">Integration reflection — word count</label><input type="number" id="rWords" min="0" step="50" placeholder="1500–3000"></div>
+      <div><label class="fl" for="cShareLink">Where the work lives (link)</label><input type="text" id="cShareLink" placeholder="https://"></div>
+    </div>
+
+    <div class="callout"><b>The rubric is dialogic, not a grade.</b> Completion — does a finished thing exist that matches or consciously revises the contract? Depth — does it recruit all the muscles of your life? Relationship — did the work move <em>through</em> the community rather than around it? Continuation — have you designed the practice that carries it past graduation?</div>
+  </div>
+
+  <!-- ===== R5 COMMENCEMENT ===== -->
+  <div class="card">
+    <div class="card-head">
+      <h2><span class="rq">Requirement Five</span>The commencement conversation</h2>
+      <span class="status st-todo" id="s5">Not started</span>
+    </div>
+    <p class="req">A closing third-generation dialogue with facilitator and fellows — not an examination. The honest question is "is this done, and is it yours?" If the answer is no, you extend into months 13–15 rather than fail.</p>
+    <div class="meter"><i id="m5" style="width:0%"></i></div>
+    <div id="commList"></div>
+  </div>
+
+  <!-- ===== MILESTONES ===== -->
+  <div class="divider"><span>Along the way</span></div>
+  <div class="card">
+    <div class="card-head">
+      <h2><span class="rq">Not required, but tracked</span>Milestones &amp; community</h2>
+    </div>
+    <p class="req">The optional turns that tend to mark a strong year — and the ones the community celebrates with you.</p>
+    <div id="milestoneList"></div>
+  </div>
+
+  <!-- ===== DATA ===== -->
+  <div class="card">
+    <div class="card-head"><h2><span class="rq">Your record</span>Save, export, carry forward</h2></div>
+    <p class="req">This check sheet stores everything in your own browser (localStorage) — nothing leaves your machine. Export a Markdown record before each monthly check-in, or a JSON file to move between devices.</p>
+    <div class="btnrow">
+      <button class="btn sm" id="exportMd">Export Markdown record</button>
+      <button class="btn sm ghost" id="exportJson">Export JSON</button>
+      <button class="btn sm ghost" id="importBtn">Import JSON</button>
+      <button class="btn sm ghost" onclick="window.print()">Print / PDF</button>
+      <button class="btn sm danger" id="resetBtn">Reset everything</button>
+    </div>
+    <input type="file" id="importFile" accept="application/json,.json" style="display:none">
+    <p class="tiny muted" style="margin-top:14px">Saved <span id="savedAt">—</span>. The JSON structure mirrors the fellow learning record in the program handbook (identity &amp; contract · practice stream · attendance stream · check-in records · milestone flags), so it can be imported directly into MetaCordial when fellowship tracking goes live.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <strong style="font-family:var(--serif);font-size:1.05rem">Wisdom Workshop</strong> · The Personal Master of Arts in Facilitating Flourishing · 2026–2027<br>
+    <span class="tiny">Questions about your pathway? <a href="mailto:sean@wisdomworkshop.io">sean@wisdomworkshop.io</a></span>
+    <div class="foot-links">
+      <a href="perma.html">Program</a>
+      <a href="perma-apply.html">Apply</a>
+      <a href="https://o-perma.com">O-PERMA Labs</a>
+      <a href="privacy-policy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- catalog data ---------- */
+  var SEASONS = {
+    summer: {name:"Summer", title:"Writing a Good Life: Consciousness as Craft",
+             texts:"Designing Your Life · Writing Down the Bones · The Artist's Way"},
+    fall:   {name:"Fall",   title:"World Philosophy Workshop: Wisdom East and West",
+             texts:"How to Live a Good Life (Pigliucci, Cleary & Kaufman)"},
+    winter: {name:"Winter", title:"Creative Psychology Workshop: The Art of Living Beautifully",
+             texts:"Wired to Create · The Creative Habit or Keep Going"},
+    spring: {name:"Spring", title:"Positive Psychology Workshop: Five Frameworks for Flourishing",
+             texts:"Seligman's PERMA mapped to the Wuxing cycle · culmination studio time"}
+  };
+  var DOORWAYS = {
+    summer2026: {label:"Summer 2026", start:"2026-07-08", due:"2026-07-01", order:["summer","fall","winter","spring"]},
+    fall2026:   {label:"Fall 2026",   start:"2026-09-16", due:"2026-09-09", order:["fall","winter","spring","summer"]},
+    winter2027: {label:"Winter 2027", start:"2027-01-20", due:"2027-01-13", order:["winter","spring","summer","fall"]}
+  };
+  var DATES = {
+    "summer|2026":"July 8 – August 19, 2026 · Wed 10am & 6pm MT",
+    "fall|2026":"September 16 – October 28, 2026 · Wed 9:30am & 6pm MT",
+    "winter|2027":"January 20 – March 3, 2027 · Wed 6–7:30pm MT",
+    "spring|2027":"April 14 – May 26, 2027 · Wed 6–7:30pm MT"
+  };
+  var PHASES = [
+    {key:"kindle",  name:"Kindle",            months:"Months 1–3",   note:"Contract witnessed · entry workshop · daily practice established"},
+    {key:"ground",  name:"Ground",            months:"Months 4–6",   note:"First prototype exists · mid-year contract revision"},
+    {key:"connect", name:"Connect & Deepen",  months:"Months 7–9",   note:"Feedback cycles · optional co-facilitation"},
+    {key:"grow",    name:"Grow",              months:"Months 10–12", note:"Culmination completed · public sharing · commencement"}
+  ];
+
+  var CULM = [
+    {k:"prototype",    t:"First prototype exists",             s:"Something rough and real, by the end of the Ground phase (months 4–6)."},
+    {k:"midYear",      t:"Mid-year contract revision",         s:"The contract is a living object. Revise it consciously rather than drifting from it."},
+    {k:"feedback",     t:"Feedback cycles completed",          s:"The work moved through the community, not around it."},
+    {k:"culmComplete", t:"Culmination project completed",      s:"A finished, shareable thing that matches — or consciously revises — the contract."},
+    {k:"culmShared",   t:"Publicly shared",                    s:"With the community and, where you choose, the world."},
+    {k:"reflection",   t:"Integration reflection submitted",   s:"1,500–3,000 words: what was made, what it cost, what it taught, what's next."}
+  ];
+  var COMM = [
+    {k:"selfAssess",   t:"Self-assessment written",     s:"Against the four criteria, inside your integration reflection."},
+    {k:"respondents",  t:"Two fellows invited to respond", s:"The facilitator and two fellows respond in the conversation."},
+    {k:"commencement", t:"Commencement conversation held", s:"A closing third-generation dialogue. Not an examination."}
+  ];
+  var MILES = [
+    {k:"contractWitnessed", t:"Co-creative contract witnessed at zero week", s:"Where the year formally begins.", opt:false},
+    {k:"discord",           t:"Welcomed into Discord + calendar",           s:"Zero-week onboarding.", opt:false},
+    {k:"altar",             t:"Altar-building session",                    s:"Where it lands.", opt:true},
+    {k:"coFacilitation",    t:"Co-facilitated a community session",        s:"$100 honorarium per public session. Counts toward ELF-C supervised hours.", opt:true},
+    {k:"prototypeSession",  t:"Prototyped a session in a zero week",       s:"Unpaid, unlimited iterations, inside the community.", opt:true},
+    {k:"elfc",              t:"Entered the ELF-C certification pathway",   s:"Supervised hours toward ICF designation.", opt:true},
+    {k:"registry",          t:"Consented to the public registry",          s:"Founding Fellows only.", opt:true}
+  ];
+
+  /* ---------- state ---------- */
+  var KEY = "perma.checksheet.v1";
+  var S;
+
+  function blank(){
+    return {
+      v:1, savedAt:null,
+      identity:{name:"", email:"", entrySeason:"fall2026", startDate:DOORWAYS.fall2026.start, practiceTarget:5},
+      contract:{project:"", practice:""},
+      workshops:[false,false,false,false],
+      workshopDates:["","","",""],
+      practiceStream:[],
+      checkIns:[],
+      culmination:{}, commencement:{}, milestones:{},
+      reflectionWords:"", shareLink:""
+    };
+  }
+  function load(){
+    try{ var raw=localStorage.getItem(KEY); if(raw){ var p=JSON.parse(raw); if(p&&p.identity) return Object.assign(blank(),p);} }
+    catch(e){ console.warn("Could not read saved record:",e); }
+    return blank();
+  }
+  function save(){
+    S.savedAt = new Date().toISOString();
+    try{ localStorage.setItem(KEY, JSON.stringify(S)); }
+    catch(e){ console.warn("Could not save:",e); }
+    var el=document.getElementById("savedAt");
+    if(el) el.textContent = new Date().toLocaleString(undefined,{month:"short",day:"numeric",hour:"numeric",minute:"2-digit"});
+  }
+
+  /* ---------- helpers ---------- */
+  function $(id){ return document.getElementById(id); }
+  function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,function(c){
+    return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+  function parseDate(s){ if(!s) return null; var p=String(s).split("-");
+    if(p.length!==3) return null; var d=new Date(+p[0],+p[1]-1,+p[2]); return isNaN(d)?null:d; }
+  function fmt(s){ var d=parseDate(s); return d? d.toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"}) : "—"; }
+  function today(){ var n=new Date(); return new Date(n.getFullYear(),n.getMonth(),n.getDate()); }
+  function todayISO(){ var d=today();
+    return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
+
+  function monthsElapsed(){
+    var st=parseDate(S.identity.startDate); if(!st) return 0;
+    var n=today();
+    var m=(n.getFullYear()-st.getFullYear())*12 + (n.getMonth()-st.getMonth());
+    if(n.getDate() < st.getDate()) m--;
+    return m; // 0 = first month in progress; negative = year hasn't opened yet
+  }
+  function hasBegun(){
+    var st=parseDate(S.identity.startDate);
+    return !!st && today() >= st;
+  }
+  function daysUntilStart(){
+    var st=parseDate(S.identity.startDate); if(!st) return null;
+    return Math.round((st-today())/86400000);
+  }
+  // 0 means the year hasn't opened yet
+  function monthOfYear(){ return hasBegun()? Math.max(1, monthsElapsed()+1) : 0; }
+  function weeksElapsed(){
+    var st=parseDate(S.identity.startDate); if(!st) return 0;
+    var d=Math.floor((today()-st)/86400000);
+    return Math.max(0, Math.min(52, Math.floor(d/7)));
+  }
+  function daysToCulmination(){
+    var st=parseDate(S.identity.startDate); if(!st) return null;
+    var end=new Date(st.getFullYear()+1, st.getMonth(), st.getDate());
+    return Math.round((end-today())/86400000);
+  }
+  function phaseIndex(){
+    var m=monthOfYear(); if(m<1) return 0;
+    return Math.min(3, Math.floor((Math.min(m,12)-1)/3));
+  }
+
+  /* ---------- requirement math ---------- */
+  function r1(){ var d=S.workshops.filter(Boolean).length; return {done:d,total:4,pct:d/4}; }
+  function r2(){
+    var logs=S.practiceStream, wk=weeksElapsed();
+    var attended=logs.filter(function(l){return l.cwr;}).length;
+    var denom=Math.max(wk, logs.length, 1);
+    var rate=attended/denom;
+    var hits=logs.reduce(function(a,l){return a+(+l.hit||0);},0);
+    var goals=logs.reduce(function(a,l){return a+(+l.target||0);},0);
+    var pRate=goals>0? hits/goals : 0;
+    // This is a year-long requirement: it can only be *complete* at the end of
+    // twelve months with the 75% floor cleared. The meter tracks the year, not
+    // the weeks logged so far — otherwise month 2 reads 100%.
+    var yearCoverage=Math.min(1, logs.length/52);
+    var gap=Math.max(0, wk-logs.length);       // weeks elapsed but never logged
+    var floorOk=rate>=0.75;
+    return {attended:attended, denom:denom, rate:rate, pRate:pRate, logged:logs.length,
+            weeks:wk, hits:hits, goals:goals, gap:gap, floorOk:floorOk,
+            complete: yearCoverage>=1 && floorOk,
+            pct: yearCoverage};
+  }
+  function r3(){ var n=S.checkIns.length; return {done:n,total:10,pct:Math.min(1,n/10)}; }
+  function r4(){
+    var d=CULM.filter(function(c){return S.culmination[c.k];}).length;
+    return {done:d,total:CULM.length,pct:d/CULM.length};
+  }
+  function r5(){
+    var d=COMM.filter(function(c){return S.commencement[c.k];}).length;
+    return {done:d,total:COMM.length,pct:d/COMM.length};
+  }
+  function overall(){
+    var a=[r1().pct, r2().pct, r3().pct, r4().pct, r5().pct];
+    return a.reduce(function(x,y){return x+y;},0)/5;
+  }
+
+  function setStatus(el, pct, override){
+    el.className="status "+(pct>=1?"st-done":pct>0?"st-going":"st-todo");
+    el.textContent = pct>=1?"Complete":pct>0?"In progress":"Not started";
+    if(override){ el.className="status "+override.cls; el.textContent=override.text; }
+  }
+  function setMeter(el, pct){ el.style.width=Math.round(pct*100)+"%"; el.parentNode.className="meter"+(pct>=1?" ok":""); }
+
+  /* ---------- rendering ---------- */
+  function renderWorkshops(){
+    var dw=DOORWAYS[S.identity.entrySeason]||DOORWAYS.fall2026;
+    var st=parseDate(S.identity.startDate)||parseDate(dw.start);
+    var baseYear=st?st.getFullYear():2026;
+    var order=dw.order;
+    var html="";
+    order.forEach(function(key,i){
+      // year advances when the season wraps past December relative to entry
+      var yr=baseYear;
+      var startMonth={summer:6,fall:8,winter:0,spring:3}[order[0]];
+      var thisMonth={summer:6,fall:8,winter:0,spring:3}[key];
+      if(thisMonth < startMonth) yr=baseYear+1;
+      if(i>0 && yr===baseYear && thisMonth<=startMonth) yr=baseYear+1;
+      var s=SEASONS[key];
+      var when=DATES[key+"|"+yr] || (s.name+" "+yr+" · dates announced at your zero week");
+      html+='<div class="check'+(S.workshops[i]?" is-done":"")+'">'+
+        '<input type="checkbox" id="ws'+i+'" data-ws="'+i+'"'+(S.workshops[i]?" checked":"")+'>'+
+        '<label for="ws'+i+'"><span class="ttl">'+esc(s.title)+'</span>'+
+        '<span class="sub">'+esc(when)+(i===0?' &nbsp;·&nbsp; <em>your entry workshop</em>':'')+'</span>'+
+        '<span class="sub" style="opacity:.8">'+esc(s.texts)+'</span></label></div>';
+    });
+    $("workshopList").innerHTML=html;
+    Array.prototype.forEach.call($("workshopList").querySelectorAll("input[data-ws]"),function(cb){
+      cb.addEventListener("change",function(){
+        S.workshops[+cb.getAttribute("data-ws")]=cb.checked; save(); render();
+      });
+    });
+  }
+
+  function renderCheckGroup(containerId, defs, bucket){
+    var html="";
+    defs.forEach(function(d){
+      var on=!!S[bucket][d.k];
+      html+='<div class="check'+(on?" is-done":"")+'">'+
+        '<input type="checkbox" id="'+bucket+"_"+d.k+'" data-b="'+bucket+'" data-k="'+d.k+'"'+(on?" checked":"")+'>'+
+        '<label for="'+bucket+"_"+d.k+'"><span class="ttl">'+esc(d.t)+
+        (d.opt?'<span class="opt">optional</span>':'')+'</span>'+
+        '<span class="sub">'+esc(d.s)+'</span></label></div>';
+    });
+    var c=$(containerId); c.innerHTML=html;
+    Array.prototype.forEach.call(c.querySelectorAll("input[data-k]"),function(cb){
+      cb.addEventListener("change",function(){
+        S[cb.getAttribute("data-b")][cb.getAttribute("data-k")]=cb.checked; save(); render();
+      });
+    });
+  }
+
+  function renderWeeks(){
+    var rows=$("weekRows");
+    if(!S.practiceStream.length){
+      rows.innerHTML='<tr><td colspan="5" class="empty">No weeks logged yet. "I hit X of 7; my goal was Y" — that\'s the whole format.</td></tr>';
+    } else {
+      var list=S.practiceStream.slice().sort(function(a,b){return (b.date||"").localeCompare(a.date||"");});
+      rows.innerHTML=list.map(function(l){
+        var idx=S.practiceStream.indexOf(l);
+        var short=(+l.hit < +l.target);
+        return '<tr><td class="n">'+fmt(l.date)+'</td>'+
+          '<td'+(short?' style="color:var(--terra-deep)"':'')+'>'+esc(l.hit)+' of 7 <span class="tiny">(goal '+esc(l.target)+')</span></td>'+
+          '<td>'+(l.cwr?'<span style="color:var(--sage)">✓ attended</span>':'<span class="tiny">missed</span>')+'</td>'+
+          '<td>'+esc(l.note||"—")+'</td>'+
+          '<td style="text-align:right"><button class="del" data-rm-week="'+idx+'" title="Remove">×</button></td></tr>';
+      }).join("");
+    }
+    Array.prototype.forEach.call(rows.querySelectorAll("[data-rm-week]"),function(b){
+      b.addEventListener("click",function(){
+        S.practiceStream.splice(+b.getAttribute("data-rm-week"),1); save(); render();
+      });
+    });
+  }
+
+  function renderCheckins(){
+    var rows=$("checkinRows");
+    if(!S.checkIns.length){
+      rows.innerHTML='<tr><td colspan="5" class="empty">No check-ins recorded yet. Ten are required across the year.</td></tr>';
+    } else {
+      var list=S.checkIns.slice().sort(function(a,b){return (b.date||"").localeCompare(a.date||"");});
+      rows.innerHTML=list.map(function(c){
+        var idx=S.checkIns.indexOf(c);
+        return '<tr><td class="n">'+fmt(c.date)+'</td><td>'+esc(c.with||"—")+'</td>'+
+          '<td>'+esc(c.commitment||"—")+'</td><td>'+esc(c.learning||"—")+'</td>'+
+          '<td style="text-align:right"><button class="del" data-rm-ci="'+idx+'" title="Remove">×</button></td></tr>';
+      }).join("");
+    }
+    Array.prototype.forEach.call(rows.querySelectorAll("[data-rm-ci]"),function(b){
+      b.addEventListener("click",function(){
+        S.checkIns.splice(+b.getAttribute("data-rm-ci"),1); save(); render();
+      });
+    });
+  }
+
+  function renderPhases(){
+    var pi=phaseIndex(), started=hasBegun();
+    $("phaseStrip").innerHTML=PHASES.map(function(p,i){
+      var cls="phase"+(started&&i===pi?" on":"")+(started&&i<pi?" done":"");
+      return '<div class="'+cls+'"><span class="ph-m">'+p.months+'</span><b>'+p.name+'</b>'+
+             '<div class="ph-note">'+p.note+'</div></div>';
+    }).join("");
+  }
+
+  function render(){
+    var a=r1(), b=r2(), c=r3(), d=r4(), e=r5(), tot=overall();
+
+    // dashboard
+    var m=monthOfYear(), begun=hasBegun();
+    $("dmMonth").textContent = !begun? "—" : (m>12? "13+ (ext.)" : m);
+    $("dmWorkshops").textContent = a.done+" / 4";
+    $("dmCheckins").textContent = c.done+" / 10";
+    $("dmAttend").textContent = b.logged? Math.round(b.rate*100)+"%" : "—";
+    $("dmPractice").textContent = b.goals? Math.min(100,Math.round(b.pRate*100))+"%" : "—";
+    var dtc=daysToCulmination(), dus=daysUntilStart();
+    $("dmDays").textContent = !begun
+      ? (dus==null? "—" : (dus===0? "Today" : "Opens in "+dus+"d"))
+      : (dtc==null? "—" : (dtc>0? dtc+" days" : "Arrived"));
+    document.querySelector('#dmDays').nextElementSibling.textContent = begun? "To culmination" : "Your year opens";
+
+    var pct=Math.round(tot*100);
+    $("ringPct").textContent=pct+"%";
+    var arc=$("ringArc"), circ=465;
+    arc.setAttribute("stroke-dashoffset", circ-(circ*tot));
+    arc.setAttribute("stroke", tot>=1? "#6B7F59" : "#BC5F33");
+
+    $("barName").textContent = S.identity.name || "—";
+    $("barMonth").textContent = !begun? "—" : (m>12? "13+" : m+" / 12");
+    $("barPhase").textContent = begun? PHASES[phaseIndex()].name : "Pre-entry";
+    $("barPct").textContent = pct+"%";
+
+    // requirements
+    setMeter($("m1"),a.pct); setStatus($("s1"),a.pct);
+    setMeter($("m2"),b.pct);
+    var ov=null;
+    if(b.logged>=4 && !b.floorOk)      ov={cls:"st-risk",  text:"Below 75% floor"};
+    else if(b.complete)                ov={cls:"st-done",  text:"Complete"};
+    else if(b.logged>0)                ov={cls:"st-going", text:"On track"};
+    setStatus($("s2"),b.pct,ov);
+    setMeter($("m3"),c.pct); setStatus($("s3"),c.pct);
+    setMeter($("m4"),d.pct); setStatus($("s4"),d.pct);
+    setMeter($("m5"),e.pct); setStatus($("s5"),e.pct);
+
+    // attendance callout
+    var an=$("attendNote");
+    if(!b.logged){ an.innerHTML=""; }
+    else {
+      var need=Math.max(0, Math.ceil(0.75*b.denom)-b.attended);
+      var warn=!b.floorOk;
+      an.innerHTML='<div class="callout'+(warn?' warn':'')+'"><b>'+b.attended+' of '+b.denom+
+        ' weekly reviews attended — '+Math.round(b.rate*100)+'%.</b> '+
+        (warn? 'The floor is 75%; '+need+' more consecutive weeks brings you back above it. Grace is extended freely for life events — bring it to your next check-in rather than carrying it alone.'
+             : 'Above the 75% floor. Practice across logged weeks: '+b.hits+' of '+b.goals+' contracted days.')+
+        (b.gap>0? ' <b>'+b.gap+' week'+(b.gap>1?'s':'')+' elapsed without a log</b> — the honest entry is worth more than the tidy one.' : '')+
+        ' Logged '+b.logged+' of 52 weeks.</div>';
+    }
+
+    renderPhases();
+    renderWorkshops();
+    renderWeeks();
+    renderCheckins();
+    renderCheckGroup("culmList", CULM, "culmination");
+    renderCheckGroup("commList", COMM, "commencement");
+    renderCheckGroup("milestoneList", MILES, "milestones");
+  }
+
+  /* ---------- export ---------- */
+  function download(name, text, type){
+    var blob=new Blob([text],{type:type||"text/plain;charset=utf-8"});
+    var url=URL.createObjectURL(blob);
+    var a=document.createElement("a"); a.href=url; a.download=name;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function(){URL.revokeObjectURL(url);},1500);
+  }
+  function slug(s){ return (s||"fellow").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")||"fellow"; }
+
+  function toMarkdown(){
+    var a=r1(),b=r2(),c=r3(),d=r4(),e=r5();
+    var dw=DOORWAYS[S.identity.entrySeason]||DOORWAYS.fall2026;
+    var L=[];
+    L.push("# perMA FELLOW RECORD — "+(S.identity.name||"Unnamed fellow"));
+    L.push("*The Personal Master of Arts · Wisdom Workshop · exported "+new Date().toLocaleDateString()+"*");
+    L.push("");
+    L.push("## Identity & Contract");
+    L.push("- **Fellow:** "+(S.identity.name||"—")+(S.identity.email?" · "+S.identity.email:""));
+    L.push("- **Entry season:** "+dw.label+" · year begins "+fmt(S.identity.startDate));
+    L.push("- **Month of year:** "+(!hasBegun()? "not yet begun"
+            : monthOfYear()>12? "13+ (extension window)" : monthOfYear()+" of 12")
+          +" · **Phase:** "+(hasBegun()? PHASES[phaseIndex()].name : "pre-entry"));
+    L.push("- **Daily practice target:** "+(S.identity.practiceTarget||5)+" of 7");
+    L.push("- **The project:** "+(S.contract.project||"—"));
+    L.push("- **The practice that carries it:** "+(S.contract.practice||"—"));
+    L.push("");
+    L.push("## Requirements at a glance");
+    L.push("| Requirement | Status |");
+    L.push("|---|---|");
+    L.push("| 1 · Four seasonal workshops | "+a.done+" of 4 |");
+    L.push("| 2 · Weekly process | "+b.attended+" of "+b.denom+" reviews ("+Math.round(b.rate*100)+"%, floor 75%) · "+b.logged+" of 52 weeks logged"+(b.gap>0?" · "+b.gap+" unlogged":"")+" |");
+    L.push("| 3 · Monthly check-ins | "+c.done+" of 10 |");
+    L.push("| 4 · Culmination project | "+d.done+" of "+d.total+" steps |");
+    L.push("| 5 · Commencement conversation | "+e.done+" of "+e.total+" steps |");
+    L.push("| **Overall** | **"+Math.round(overall()*100)+"%** |");
+    L.push("");
+    L.push("## Workshops");
+    var order=dw.order;
+    order.forEach(function(k,i){ L.push("- ["+(S.workshops[i]?"x":" ")+"] "+SEASONS[k].title); });
+    L.push("");
+    L.push("## Practice stream");
+    if(!S.practiceStream.length) L.push("*No weeks logged.*");
+    else {
+      L.push("| Week of | Practice | Weekly Review | Note |");
+      L.push("|---|---|---|---|");
+      S.practiceStream.slice().sort(function(x,y){return (x.date||"").localeCompare(y.date||"");})
+        .forEach(function(l){ L.push("| "+fmt(l.date)+" | "+l.hit+" of 7 (goal "+l.target+") | "+(l.cwr?"attended":"missed")+" | "+(l.note||"")+" |"); });
+      L.push("");
+      L.push("**Totals:** "+b.hits+" of "+b.goals+" contracted days across "+b.logged+" logged weeks.");
+    }
+    L.push("");
+    L.push("## Check-in records");
+    if(!S.checkIns.length) L.push("*No check-ins recorded.*");
+    else S.checkIns.slice().sort(function(x,y){return (x.date||"").localeCompare(y.date||"");}).forEach(function(ci){
+      L.push("### "+fmt(ci.date)+(ci.with?" — with "+ci.with:""));
+      L.push("- **Commitment for the coming month:** "+(ci.commitment||"—"));
+      L.push("- **What the facilitator is learning:** "+(ci.learning||"—"));
+    });
+    L.push("");
+    L.push("## Culmination project");
+    CULM.forEach(function(x){ L.push("- ["+(S.culmination[x.k]?"x":" ")+"] "+x.t); });
+    if(S.reflectionWords) L.push("- Integration reflection: "+S.reflectionWords+" words (target 1,500–3,000)");
+    if(S.shareLink) L.push("- The work lives at: "+S.shareLink);
+    L.push("");
+    L.push("## Commencement");
+    COMM.forEach(function(x){ L.push("- ["+(S.commencement[x.k]?"x":" ")+"] "+x.t); });
+    L.push("");
+    L.push("## Milestones");
+    MILES.forEach(function(x){ L.push("- ["+(S.milestones[x.k]?"x":" ")+"] "+x.t+(x.opt?" *(optional)*":"")); });
+    L.push("");
+    L.push("---");
+    L.push("*Generated by the perMA Requirements Check Sheet. Bring this to your monthly check-in.*");
+    return L.join("\n");
+  }
+
+  /* ---------- wiring ---------- */
+  function bindField(id, get, set){
+    var el=$(id); if(!el) return;
+    el.value = get()==null? "" : get();
+    el.addEventListener("input", function(){ set(el.value); save(); render(); });
+    el.addEventListener("change", function(){ set(el.value); save(); render(); });
+  }
+
+  function init(){
+    S=load();
+
+    bindField("fName", function(){return S.identity.name;}, function(v){S.identity.name=v;});
+    bindField("fEmail", function(){return S.identity.email;}, function(v){S.identity.email=v;});
+    bindField("fStart", function(){return S.identity.startDate;}, function(v){S.identity.startDate=v;});
+    bindField("fTarget", function(){return S.identity.practiceTarget;}, function(v){S.identity.practiceTarget=v;});
+    bindField("fProject", function(){return S.contract.project;}, function(v){S.contract.project=v;});
+    bindField("fPractice", function(){return S.contract.practice;}, function(v){S.contract.practice=v;});
+    bindField("rWords", function(){return S.reflectionWords;}, function(v){S.reflectionWords=v;});
+    bindField("cShareLink", function(){return S.shareLink;}, function(v){S.shareLink=v;});
+
+    var sel=$("fSeason");
+    sel.value=S.identity.entrySeason;
+    sel.addEventListener("change", function(){
+      S.identity.entrySeason=sel.value;
+      var d=DOORWAYS[sel.value];
+      // only auto-fill the start date if it still matches a doorway default
+      var wasDefault=Object.keys(DOORWAYS).some(function(k){return DOORWAYS[k].start===S.identity.startDate;});
+      if(wasDefault || !S.identity.startDate){ S.identity.startDate=d.start; $("fStart").value=d.start; }
+      save(); render();
+    });
+
+    $("wTarget").value = S.identity.practiceTarget || 5;
+    $("wDate").value = todayISO();
+    $("cDate").value = todayISO();
+
+    $("addWeek").addEventListener("click", function(){
+      var date=$("wDate").value, hit=$("wHit").value, tgt=$("wTarget").value;
+      if(!date){ $("wDate").focus(); return; }
+      if(hit===""){ $("wHit").focus(); return; }
+      S.practiceStream.push({
+        date:date, hit:Math.max(0,Math.min(7,+hit)),
+        target:Math.max(0,Math.min(7,+(tgt||S.identity.practiceTarget||5))),
+        cwr: $("wCwr").value==="1", note:$("wNote").value.trim()
+      });
+      $("wHit").value=""; $("wNote").value="";
+      var d=parseDate(date); if(d){ d.setDate(d.getDate()+7);
+        $("wDate").value=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
+      save(); render();
+    });
+
+    $("addCheckin").addEventListener("click", function(){
+      var date=$("cDate").value;
+      if(!date){ $("cDate").focus(); return; }
+      S.checkIns.push({date:date, with:$("cWith").value.trim(),
+        commitment:$("cCommit").value.trim(), learning:$("cLearn").value.trim()});
+      $("cCommit").value=""; $("cLearn").value="";
+      save(); render();
+    });
+
+    $("exportMd").addEventListener("click", function(){
+      download("perma-record-"+slug(S.identity.name)+".md", toMarkdown(), "text/markdown;charset=utf-8");
+    });
+    $("exportJson").addEventListener("click", function(){
+      download("perma-record-"+slug(S.identity.name)+".json", JSON.stringify(S,null,2), "application/json");
+    });
+    $("importBtn").addEventListener("click", function(){ $("importFile").click(); });
+    $("importFile").addEventListener("change", function(ev){
+      var f=ev.target.files && ev.target.files[0]; if(!f) return;
+      var r=new FileReader();
+      r.onload=function(){
+        try{
+          var p=JSON.parse(r.result);
+          if(!p || !p.identity) throw new Error("Not a perMA record");
+          S=Object.assign(blank(),p);
+          save(); location.reload();
+        }catch(err){ alert("That file could not be read as a perMA record.\n\n"+err.message); }
+      };
+      r.readAsText(f);
+      ev.target.value="";
+    });
+    $("resetBtn").addEventListener("click", function(){
+      if(confirm("Clear this check sheet and start fresh?\n\nExport your record first if you want to keep it — this cannot be undone.")){
+        localStorage.removeItem(KEY); location.reload();
+      }
+    });
+
+    if(S.savedAt){
+      $("savedAt").textContent=new Date(S.savedAt).toLocaleString(undefined,{month:"short",day:"numeric",hour:"numeric",minute:"2-digit"});
+    } else { $("savedAt").textContent="not yet"; }
+
+    render();
+  }
+
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",init);
+  else init();
+})();
+</script>
+
+</body>
+</html>
