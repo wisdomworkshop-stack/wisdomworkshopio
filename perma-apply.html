@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply · The Personal Master of Arts · Wisdom Workshop</title>
+<meta name="description" content="Begin with a conversation. The Personal Master of Arts — a twelve-month, no-residency program. Admission by application and interview.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FAF6EF; --cream-deep:#F3ECDF; --ink:#2C2620; --ink-soft:#5C5347;
+    --terra:#BC5F33; --terra-deep:#9C4A24; --sage:#6B7F59; --gold:#C9A227;
+    --line:rgba(44,38,32,.14);
+    --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+    --sans:'DM Sans',-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.68;font-size:16.5px;-webkit-font-smoothing:antialiased}
+  body::after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.05;z-index:999;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");}
+  h1,h2,h3,.serif{font-family:var(--serif);font-weight:600;line-height:1.16}
+  a{color:var(--terra)} a:hover{color:var(--terra-deep)}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px}
+  .eyebrow{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);font-weight:500;margin-bottom:12px}
+  .muted{color:var(--ink-soft)} .small{font-size:.88rem} .tiny{font-size:.78rem}
+
+  header.bar{position:sticky;top:0;z-index:60;background:rgba(250,246,239,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar-inner{max-width:760px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--ink);text-decoration:none;line-height:1.2}
+  .brand small{display:block;font-family:var(--sans);font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);font-weight:400}
+  .prog{flex:1;max-width:220px}
+  .prog .bar-t{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:4px;text-align:right}
+  .pmeter{height:5px;background:rgba(44,38,32,.1);border-radius:999px;overflow:hidden}
+  .pmeter i{display:block;height:100%;width:0%;background:var(--terra);border-radius:999px;transition:width .35s ease}
+
+  .hero{padding:66px 0 34px;text-align:center}
+  .hero h1{font-size:clamp(2.2rem,5.6vw,3.4rem);margin-bottom:16px}
+  .hero h1 em{font-style:italic;color:var(--terra)}
+  .hero .sub{font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,2.6vw,1.45rem);color:var(--ink-soft);max-width:560px;margin:0 auto}
+
+  .note{background:var(--cream-deep);border:1px solid var(--line);border-radius:16px;padding:26px 28px;margin:34px 0 8px;color:var(--ink-soft);font-size:.98rem}
+  .note b{color:var(--ink);font-weight:500}
+
+  /* which-application identifier */
+  .whichone{border:1.5px solid var(--terra);background:rgba(188,95,51,.06);border-radius:16px;padding:20px 24px;margin-top:30px}
+  .w-tag{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);font-weight:500;margin-bottom:5px}
+  .w-name{font-family:var(--serif);font-size:1.32rem;color:var(--ink);line-height:1.25}
+  .w-name strong{font-family:var(--sans);font-size:.9rem;font-weight:500;color:var(--ink-soft);white-space:nowrap}
+  .w-alt{font-size:.86rem;color:var(--ink-soft);margin-top:10px;padding-top:10px;border-top:1px solid rgba(188,95,51,.25)}
+
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:32px 0 12px}
+  .stp{border:1px solid var(--line);border-radius:14px;padding:18px 18px;background:#fff8}
+  .stp .n{font-family:var(--serif);font-size:1.5rem;color:var(--terra);font-weight:600;line-height:1}
+  .stp h3{font-size:1.05rem;margin:4px 0 5px}
+  .stp p{font-size:.83rem;color:var(--ink-soft);line-height:1.5}
+
+  form{margin-top:14px}
+  fieldset{border:none;border-top:1px solid var(--line);padding:38px 0 8px;margin-top:14px}
+  fieldset:first-of-type{border-top:none}
+  legend{display:none}
+  .fs-head{margin-bottom:26px}
+  .fs-head h2{font-size:1.7rem;margin-bottom:6px}
+  .fs-head p{font-size:.94rem;color:var(--ink-soft)}
+
+  .field{margin-bottom:26px}
+  .field > label{display:block;font-weight:500;font-size:1.02rem;margin-bottom:4px}
+  .field .help{display:block;font-size:.86rem;color:var(--ink-soft);margin-bottom:9px;line-height:1.5}
+  .field .help em{font-style:italic}
+  .req-dot{color:var(--terra);margin-left:3px}
+  .optional{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);border:1px solid var(--line);border-radius:999px;padding:1px 9px;margin-left:8px;vertical-align:middle;font-weight:400}
+
+  input[type=text],input[type=email],input[type=url],textarea,select{
+    width:100%;font-family:var(--sans);font-size:1rem;color:var(--ink);background:#fffa;
+    border:1px solid var(--line);border-radius:11px;padding:12px 14px;transition:.18s;line-height:1.6}
+  textarea{resize:vertical;min-height:120px}
+  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--terra);background:#fff;box-shadow:0 0 0 3px rgba(188,95,51,.1)}
+  input.err,textarea.err,select.err{border-color:var(--terra);background:rgba(188,95,51,.05)}
+  .errmsg{display:none;font-size:.82rem;color:var(--terra-deep);margin-top:6px}
+  .field.showerr .errmsg{display:block}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+  .counter{font-size:.75rem;color:var(--ink-soft);text-align:right;margin-top:5px}
+
+  .choices{display:grid;gap:10px}
+  .choice{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;padding:13px 15px;cursor:pointer;background:#fff7;transition:.18s}
+  .choice:hover{border-color:rgba(188,95,51,.5);background:#fff}
+  .choice input{appearance:none;-webkit-appearance:none;flex:0 0 auto;width:19px;height:19px;margin-top:3px;border:1.5px solid rgba(188,95,51,.55);border-radius:50%;position:relative;cursor:pointer;transition:.18s}
+  .choice input:checked{border-color:var(--terra);border-width:6px}
+  .choice:has(input:checked){border-color:var(--terra);background:rgba(188,95,51,.06)}
+  .choice span{flex:1}
+  .choice b{display:block;font-weight:500}
+  .choice em{display:block;font-style:normal;font-size:.84rem;color:var(--ink-soft);margin-top:1px}
+
+  .btn{display:inline-block;padding:14px 30px;border-radius:999px;font-family:var(--sans);font-weight:500;font-size:.95rem;
+    border:1.5px solid var(--terra);background:var(--terra);color:var(--cream);cursor:pointer;transition:.2s;text-decoration:none;text-align:center}
+  .btn:hover{background:var(--terra-deep);border-color:var(--terra-deep);color:var(--cream)}
+  .btn.ghost{background:transparent;color:var(--terra)}
+  .btn.ghost:hover{background:rgba(188,95,51,.08)}
+  .btn.sm{padding:10px 22px;font-size:.85rem}
+  .btnrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:8px}
+
+  .submit-block{background:var(--cream-deep);border:1px solid var(--line);border-radius:18px;padding:32px 30px;margin:40px 0 10px}
+  .submit-block h2{font-size:1.6rem;margin-bottom:8px}
+  .submit-block p{font-size:.94rem;color:var(--ink-soft);margin-bottom:18px}
+
+  #result{display:none;margin-top:24px}
+  #result.on{display:block}
+  .result-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 26px;margin-bottom:16px}
+  .result-card h3{font-size:1.3rem;margin-bottom:10px;color:var(--terra-deep)}
+  pre{white-space:pre-wrap;word-wrap:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.8rem;line-height:1.6;
+    background:var(--cream);border:1px solid var(--line);border-radius:11px;padding:18px;max-height:340px;overflow:auto;color:var(--ink-soft)}
+  .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--cream);
+    padding:12px 24px;border-radius:999px;font-size:.86rem;opacity:0;pointer-events:none;transition:.28s;z-index:200}
+  .toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  .saved{font-size:.76rem;color:var(--ink-soft);margin-top:12px}
+  .callout{border-left:3px solid var(--sage);background:rgba(107,127,89,.07);padding:15px 18px;border-radius:0 10px 10px 0;font-size:.88rem;color:var(--ink-soft);margin-top:20px}
+  .callout b{color:var(--ink);font-weight:500}
+
+  footer{border-top:1px solid var(--line);margin-top:56px;padding:38px 0 64px;font-size:.85rem;color:var(--ink-soft);text-align:center}
+  footer .q{font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--ink);margin-top:14px}
+  .foot-links{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin-top:14px}
+  .foot-links a{color:var(--ink-soft)} .foot-links a:hover{color:var(--terra)}
+
+  @media print{header.bar,.btnrow,.submit-block{display:none}body::after{display:none}}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar-inner">
+    <a class="brand" href="perma.html">Wisdom Workshop<small>perMA Application</small></a>
+    <div class="prog">
+      <div class="bar-t"><span id="progTxt">0 of 8 answered</span></div>
+      <div class="pmeter"><i id="progBar"></i></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">The Personal Master of Arts · 2026–2027</p>
+    <h1>Begin with a <em>conversation</em></h1>
+    <p class="sub">This takes about five minutes. There's no committee and no essay-grading — we read every application personally, and the next step is simply a conversation.</p>
+  </div>
+
+  <div class="whichone">
+    <p class="w-tag">You're applying to</p>
+    <p class="w-name">The Personal Master of Arts — <strong>twelve months, $4,950</strong></p>
+    <p class="w-alt">Just want the seven-week World Philosophy Workshop ($695)? <a href="world-philosophy-apply.html">That's a different, much shorter application &nearr;</a></p>
+  </div>
+
+  <div class="note">
+    <b>What we're listening for:</b> a project that's genuinely yours, and readiness to give it a year. Not credentials, not a mission statement, not a polished pitch. Your personal philosophy is coursework — the World Philosophy Workshop produces it. We don't need it now.
+  </div>
+
+  <div class="steps">
+    <div class="stp"><span class="n">1</span><h3>The application</h3><p>Ten questions, about five minutes. We read every one personally and reply within two days.</p></div>
+    <div class="stp"><span class="n">2</span><h3>The conversation</h3><p>An hour toward a curricular pathway that's actually yours, matched to the season you enter.</p></div>
+    <div class="stp"><span class="n">3</span><h3>The contract</h3><p>You write your co-creative contract from our one-page template. One optional call for support.</p></div>
+    <div class="stp"><span class="n">4</span><h3>Zero week</h3><p>Discord, calendar, and your contract witnessed in the circle. The year starts.</p></div>
+  </div>
+
+  <form id="app" novalidate>
+
+    <fieldset>
+      <legend>About you</legend>
+      <div class="fs-head">
+        <h2>Who's writing</h2>
+        <p>The plain facts, so we can find you and know what hour of your day we're calling into.</p>
+      </div>
+
+      <div class="grid2">
+        <div class="field" data-req="1">
+          <label for="q_name">Your name<span class="req-dot">*</span></label>
+          <input type="text" id="q_name" name="name" autocomplete="name">
+          <span class="errmsg">We'd like to know what to call you.</span>
+        </div>
+        <div class="field" data-req="1">
+          <label for="q_email">Email<span class="req-dot">*</span></label>
+          <input type="email" id="q_email" name="email" autocomplete="email" placeholder="you@example.com">
+          <span class="errmsg">Please give an address we can reply to.</span>
+        </div>
+      </div>
+
+      <div class="field" data-req="1">
+        <label for="q_where">Where in the world are you?<span class="req-dot">*</span></label>
+        <span class="help">City and timezone. Sessions run on Mountain Time — we want to know what we're asking of your evening.</span>
+        <input type="text" id="q_where" name="where" placeholder="Fort Collins, Colorado · MT (UTC−7)">
+        <span class="errmsg">City and timezone, roughly, is plenty.</span>
+      </div>
+
+      <div class="grid2">
+        <div class="field" data-req="1">
+          <label for="q_link1">One link that best represents you<span class="req-dot">*</span></label>
+          <span class="help">A website, a social profile, a portfolio, a Substack — anything.</span>
+          <input type="text" id="q_link1" name="link1" placeholder="https://">
+          <span class="errmsg">One link, whichever one is most you.</span>
+        </div>
+        <div class="field">
+          <label for="q_link2">A second link<span class="optional">optional</span></label>
+          <span class="help">If one isn't enough.</span>
+          <input type="text" id="q_link2" name="link2" placeholder="https://">
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>The work</legend>
+      <div class="fs-head">
+        <h2>The work that's yours to make</h2>
+        <p>The two questions that matter most. Take your time with these — they're also the first pages of your co-creative contract.</p>
+      </div>
+
+      <div class="field" data-req="1">
+        <label for="q_project">The project.<span class="req-dot">*</span></label>
+        <span class="help">What is the work that's yours to make — the thing you'd give a year to? And why now?<br>
+          <em>Three to eight sentences, plain words. A manuscript, an album, a practice, a venture, a course, a second act. It's fine if it's still foggy — tell us about the fog.</em></span>
+        <textarea id="q_project" name="project" data-count="1"></textarea>
+        <div class="counter"><span data-for="q_project">0</span> words</div>
+        <span class="errmsg">Even a foggy answer is the right answer here.</span>
+      </div>
+
+      <div class="field" data-req="1">
+        <label for="q_questions">Your passions, framed as infinite questions.<span class="req-dot">*</span></label>
+        <span class="help">What are one or two open questions you could live inside for a year?<br>
+          <em>Not goals — questions. The kind that get better, not smaller, the longer you carry them.</em></span>
+        <textarea id="q_questions" name="questions" style="min-height:100px"></textarea>
+        <span class="errmsg">One question is enough to begin.</span>
+      </div>
+
+      <div class="field" data-req="1">
+        <label for="q_sent">Who or what sent you here?<span class="req-dot">*</span></label>
+        <span class="help">A person, an essay, a search, a whisper.</span>
+        <input type="text" id="q_sent" name="sent">
+        <span class="errmsg">However you arrived, we'd like to know.</span>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>The doorway</legend>
+      <div class="fs-head">
+        <h2>Your doorway</h2>
+        <p>Three entry seasons a year. Spring is culmination season — the studio months — not an entry point.</p>
+      </div>
+
+      <div class="field" data-req="1" data-group="season">
+        <label>Which season would you enter?<span class="req-dot">*</span></label>
+        <div class="choices" style="margin-top:10px">
+          <label class="choice"><input type="radio" name="season" value="Summer 2026 — begins July 8"><span><b>Summer 2026</b><em>Workshop began July 8 · Writing a Good Life · now in session</em></span></label>
+          <label class="choice"><input type="radio" name="season" value="Fall 2026 — begins September 16"><span><b>Fall 2026</b><em>Contracts due September 9 · begins September 16 · World Philosophy</em></span></label>
+          <label class="choice"><input type="radio" name="season" value="Winter 2027 — begins January 20"><span><b>Winter 2027</b><em>Contracts due January 13 · begins January 20 · Creative Psychology</em></span></label>
+          <label class="choice"><input type="radio" name="season" value="Not sure yet"><span><b>Not sure yet</b><em>We'll find the right doorway together in conversation.</em></span></label>
+        </div>
+        <span class="errmsg">Pick a doorway, or tell us you're not sure — both are fine.</span>
+      </div>
+
+      <div class="field" data-req="1" data-group="tuition">
+        <label>Tuition<span class="req-dot">*</span></label>
+        <span class="help">$4,950 one-time, or $412.50/month for twelve months. Needs-based scholarships are always available, and money is never the reason we say no.</span>
+        <div class="choices" style="margin-top:10px">
+          <label class="choice"><input type="radio" name="tuition" value="Ready to enroll"><span><b>Ready to enroll</b></span></label>
+          <label class="choice"><input type="radio" name="tuition" value="Interested in a needs-based scholarship"><span><b>Interested in a needs-based scholarship</b><em>Recipients notified one week before the season begins.</em></span></label>
+          <label class="choice"><input type="radio" name="tuition" value="Want to talk it through"><span><b>Want to talk it through</b></span></label>
+        </div>
+        <span class="errmsg">Whichever is honest today.</span>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>For the conversation</legend>
+      <div class="fs-head">
+        <h2>For the conversation</h2>
+        <p>So the hour we spend together starts warm instead of scheduling.</p>
+      </div>
+
+      <div class="grid2">
+        <div class="field">
+          <label for="q_times">When are you usually reachable?<span class="optional">optional</span></label>
+          <span class="help">Days and rough hours, in your own timezone.</span>
+          <input type="text" id="q_times" name="times" placeholder="Weekday mornings, or after 7pm any night">
+        </div>
+        <div class="field">
+          <label for="q_access">Anything that would make this easier for you?<span class="optional">optional</span></label>
+          <span class="help">Access needs, hard constraints, a name we should use.</span>
+          <input type="text" id="q_access" name="access">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="q_else">Anything else we should know?<span class="optional">optional</span></label>
+        <textarea id="q_else" name="else" style="min-height:90px"></textarea>
+      </div>
+    </fieldset>
+
+    <div class="submit-block">
+      <h2>Send it</h2>
+      <p>Your answers live only in this browser until you send them. Sending opens your email client with everything assembled — or copy the text and send it however you like.</p>
+      <div class="btnrow">
+        <button type="button" class="btn" id="sendBtn">Review &amp; send my application</button>
+        <button type="button" class="btn ghost sm" id="saveBtn">Save draft</button>
+        <button type="button" class="btn ghost sm" id="clearBtn">Clear</button>
+      </div>
+      <p class="saved" id="savedTxt">Drafts save automatically as you type.</p>
+    </div>
+
+    <div id="result">
+      <div class="result-card">
+        <h3>Ready to send</h3>
+        <p class="small muted" style="margin-bottom:14px">Here's your application as it will arrive. Send it by email, or copy it into a message.</p>
+        <pre id="preview"></pre>
+        <div class="btnrow">
+          <a class="btn" id="mailBtn" href="#">Open in my email</a>
+          <button type="button" class="btn ghost sm" id="copyBtn">Copy text</button>
+          <button type="button" class="btn ghost sm" id="dlBtn">Download a copy</button>
+        </div>
+        <div class="callout"><b>What happens next.</b> A personal reply within two days — two sentences responding to your project specifically, not a template. If it seems like a good fit, that reply includes scheduling for the admission conversation. Then the contract template, then your zero week.</div>
+      </div>
+    </div>
+
+  </form>
+
+  <div class="callout" style="margin-top:34px">
+    <b>Curious what the year actually asks of you?</b> The <a href="perma-tracker.html">requirements check sheet</a> lays out all five degree requirements — four seasonal workshops, the weekly process, ten monthly check-ins, the culmination project, and the commencement conversation — and lets you track them once you're in.
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>Questions? <a href="mailto:sean@wisdomworkshop.io">sean@wisdomworkshop.io</a></p>
+    <p class="q">"If you're not busy being born, you're busy dying." — Bob Dylan</p>
+    <div class="foot-links">
+      <a href="perma.html">The Program</a>
+      <a href="perma-tracker.html">Check Sheet</a>
+      <a href="https://o-perma.com">O-PERMA Labs</a>
+      <a href="privacy-policy.html">Privacy</a>
+    </div>
+    <p class="tiny" style="margin-top:20px;opacity:.75">Wisdom Workshop · The Personal Master of Arts in Facilitating Flourishing · Admission by application and interview</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ------------------------------------------------------------------
+     WIRING NOTE
+     Leave FORM_ENDPOINT empty and the application assembles an email
+     (mailto + copy + download) — works on any static host, no backend.
+     Set it to a Google Apps Script / Formspree / Netlify Forms URL and
+     the same answers POST as JSON instead, with the email as fallback.
+  ------------------------------------------------------------------ */
+  var FORM_ENDPOINT = "";
+  var TO = "sean@wisdomworkshop.io";
+  var KEY = "perma.application.draft.v1";
+
+  var FIELDS = [
+    {id:"q_name",      key:"name",      label:"Name",                     req:true},
+    {id:"q_email",     key:"email",     label:"Email",                    req:true},
+    {id:"q_where",     key:"where",     label:"Where in the world",       req:true},
+    {id:"q_link1",     key:"link1",     label:"Link",                     req:true},
+    {id:"q_link2",     key:"link2",     label:"Second link",              req:false},
+    {id:"q_project",   key:"project",   label:"The project",              req:true},
+    {id:"q_questions", key:"questions", label:"Infinite questions",       req:true},
+    {id:"q_sent",      key:"sent",      label:"Who or what sent me here", req:true},
+    {id:"q_times",     key:"times",     label:"Usually reachable",        req:false},
+    {id:"q_access",    key:"access",    label:"To make this easier",      req:false},
+    {id:"q_else",      key:"else",      label:"Anything else",            req:false}
+  ];
+  var GROUPS = [
+    {name:"season",  label:"Entry season", req:true},
+    {name:"tuition", label:"Tuition",      req:true}
+  ];
+
+  function $(id){ return document.getElementById(id); }
+  function val(id){ var e=$(id); return e? e.value.trim() : ""; }
+  function radio(name){ var r=document.querySelector('input[name="'+name+'"]:checked'); return r? r.value : ""; }
+  function words(s){ s=s.trim(); return s? s.split(/\s+/).length : 0; }
+
+  function toast(msg){
+    var t=$("toast"); t.textContent=msg; t.classList.add("on");
+    clearTimeout(t._h); t._h=setTimeout(function(){ t.classList.remove("on"); },2200);
+  }
+
+  /* ---------- draft persistence ---------- */
+  function collect(){
+    var d={};
+    FIELDS.forEach(function(f){ d[f.key]=val(f.id); });
+    GROUPS.forEach(function(g){ d[g.name]=radio(g.name); });
+    return d;
+  }
+  function saveDraft(quiet){
+    try{
+      localStorage.setItem(KEY, JSON.stringify({at:new Date().toISOString(), data:collect()}));
+      if(!quiet){ toast("Draft saved in this browser"); }
+      $("savedTxt").textContent="Draft saved "+new Date().toLocaleTimeString(undefined,{hour:"numeric",minute:"2-digit"})+" — in this browser only.";
+    }catch(e){ if(!quiet) toast("Couldn't save the draft here"); }
+  }
+  function loadDraft(){
+    try{
+      var raw=localStorage.getItem(KEY); if(!raw) return;
+      var p=JSON.parse(raw); if(!p||!p.data) return;
+      FIELDS.forEach(function(f){ if(p.data[f.key] && $(f.id)) $(f.id).value=p.data[f.key]; });
+      GROUPS.forEach(function(g){
+        if(!p.data[g.name]) return;
+        var r=document.querySelector('input[name="'+g.name+'"][value="'+p.data[g.name].replace(/"/g,'\\"')+'"]');
+        if(r) r.checked=true;
+      });
+      if(p.at) $("savedTxt").textContent="Draft restored from "+new Date(p.at).toLocaleString(undefined,{month:"short",day:"numeric",hour:"numeric",minute:"2-digit"})+".";
+    }catch(e){ /* a corrupt draft shouldn't block a new application */ }
+  }
+
+  /* ---------- progress ---------- */
+  function progress(){
+    var required=FIELDS.filter(function(f){return f.req;});
+    var done=required.filter(function(f){ return val(f.id)!==""; }).length;
+    GROUPS.forEach(function(g){ if(radio(g.name)) done++; });
+    var total=required.length+GROUPS.length;
+    // 8 conceptual questions (name+email count as one "who's writing" step)
+    $("progBar").style.width=Math.round(done/total*100)+"%";
+    $("progTxt").textContent=done+" of "+total+" answered";
+  }
+
+  /* ---------- validation ---------- */
+  function fieldWrap(el){ var p=el; while(p && !p.classList.contains("field")) p=p.parentNode; return p; }
+  function markErr(el, on){
+    if(!el) return;
+    el.classList.toggle("err", !!on);
+    var w=fieldWrap(el); if(w) w.classList.toggle("showerr", !!on);
+  }
+  function validEmail(s){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(s); }
+
+  function validate(){
+    var firstBad=null;
+    FIELDS.forEach(function(f){
+      if(!f.req) return;
+      var el=$(f.id), bad = val(f.id)==="";
+      if(f.key==="email" && !bad) bad = !validEmail(val(f.id));
+      markErr(el, bad);
+      if(bad && !firstBad) firstBad=el;
+    });
+    GROUPS.forEach(function(g){
+      var w=document.querySelector('.field[data-group="'+g.name+'"]');
+      var bad=!radio(g.name);
+      if(w){ w.classList.toggle("showerr", bad); if(bad && !firstBad) firstBad=w; }
+    });
+    if(firstBad){
+      firstBad.scrollIntoView({behavior:"smooth", block:"center"});
+      if(firstBad.focus) try{ firstBad.focus({preventScroll:true}); }catch(e){}
+      toast("A few answers still to go");
+      return false;
+    }
+    return true;
+  }
+
+  /* ---------- assemble ---------- */
+  function buildText(){
+    var d=collect(), L=[];
+    L.push("perMA APPLICATION — "+(d.name||"—"));
+    L.push("The Personal Master of Arts · Wisdom Workshop · 2026–2027");
+    L.push("Submitted "+new Date().toLocaleString());
+    L.push("");
+    L.push("— WHO'S WRITING —");
+    L.push("Name: "+d.name);
+    L.push("Email: "+d.email);
+    L.push("Where in the world: "+d.where);
+    L.push("Link: "+d.link1);
+    if(d.link2) L.push("Second link: "+d.link2);
+    L.push("");
+    L.push("— THE PROJECT —");
+    L.push("(What is the work that's yours to make, and why now?)");
+    L.push(d.project);
+    L.push("");
+    L.push("— INFINITE QUESTIONS —");
+    L.push("(One or two open questions I could live inside for a year)");
+    L.push(d.questions);
+    L.push("");
+    L.push("— WHO OR WHAT SENT ME HERE —");
+    L.push(d.sent);
+    L.push("");
+    L.push("— THE DOORWAY —");
+    L.push("Entry season: "+d.season);
+    L.push("Tuition: "+d.tuition);
+    L.push("");
+    L.push("— FOR THE CONVERSATION —");
+    L.push("Usually reachable: "+(d.times||"—"));
+    L.push("To make this easier: "+(d.access||"—"));
+    L.push("Anything else: "+(d.else||"—"));
+    L.push("");
+    L.push("---");
+    L.push("Sent from the perMA application at wisdomworkshop.io");
+    return L.join("\n");
+  }
+
+  function mailtoHref(text, name){
+    var subject="perMA Application — "+(name||"a new fellow");
+    // mailto bodies get truncated by some clients past ~1800 chars; the
+    // copy and download buttons are the reliable path for long answers.
+    var body=text.length>1800? text.slice(0,1750)+"\n\n[…continued — full text copied to clipboard]" : text;
+    return "mailto:"+TO+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
+  }
+
+  function download(name, text){
+    var blob=new Blob([text],{type:"text/plain;charset=utf-8"});
+    var url=URL.createObjectURL(blob);
+    var a=document.createElement("a"); a.href=url; a.download=name;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function(){URL.revokeObjectURL(url);},1500);
+  }
+  function slug(s){ return (s||"application").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")||"application"; }
+
+  function postEndpoint(payload){
+    return fetch(FORM_ENDPOINT,{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify(payload)
+    });
+  }
+
+  /* ---------- wiring ---------- */
+  function init(){
+    loadDraft();
+
+    var t=null;
+    document.querySelectorAll("input,textarea").forEach(function(el){
+      el.addEventListener("input", function(){
+        progress();
+        if(el.classList.contains("err")) markErr(el,false);
+        clearTimeout(t); t=setTimeout(function(){ saveDraft(true); }, 900);
+      });
+      el.addEventListener("change", function(){
+        progress();
+        var w=el.closest? el.closest(".field") : null;
+        if(w) w.classList.remove("showerr");
+        saveDraft(true);
+      });
+    });
+
+    var pc=$("q_project");
+    if(pc){
+      var out=document.querySelector('[data-for="q_project"]');
+      var upd=function(){ out.textContent=words(pc.value); };
+      pc.addEventListener("input",upd); upd();
+    }
+
+    $("saveBtn").addEventListener("click", function(){ saveDraft(false); });
+    $("clearBtn").addEventListener("click", function(){
+      if(!confirm("Clear everything you've written here?")) return;
+      localStorage.removeItem(KEY);
+      document.getElementById("app").reset();
+      $("result").classList.remove("on");
+      document.querySelectorAll(".field").forEach(function(f){ f.classList.remove("showerr"); });
+      document.querySelectorAll(".err").forEach(function(f){ f.classList.remove("err"); });
+      progress();
+      toast("Cleared");
+    });
+
+    $("sendBtn").addEventListener("click", function(){
+      if(!validate()) return;
+      var text=buildText(), d=collect();
+      $("preview").textContent=text;
+      $("mailBtn").href=mailtoHref(text, d.name);
+      $("result").classList.add("on");
+      $("result").scrollIntoView({behavior:"smooth", block:"start"});
+      saveDraft(true);
+
+      if(FORM_ENDPOINT){
+        postEndpoint(d).then(function(r){
+          if(r.ok){ toast("Application received — watch for a reply within two days"); }
+          else { toast("Couldn't submit directly — please send by email below"); }
+        }).catch(function(){ toast("Couldn't submit directly — please send by email below"); });
+      }
+    });
+
+    $("copyBtn").addEventListener("click", function(){
+      var text=$("preview").textContent;
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(function(){ toast("Copied — paste it into an email to "+TO); },
+          function(){ toast("Select the text above and copy it"); });
+      } else { toast("Select the text above and copy it"); }
+    });
+    $("dlBtn").addEventListener("click", function(){
+      download("perma-application-"+slug(val("q_name"))+".txt", $("preview").textContent);
+    });
+
+    progress();
+  }
+
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",init);
+  else init();
+})();
+</script>
+
+</body>
+</html>

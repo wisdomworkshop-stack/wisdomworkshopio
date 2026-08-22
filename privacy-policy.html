@@ -3,82 +3,182 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy — Wisdom Workshop</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23BC5F33'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='21' font-weight='700' text-anchor='middle' fill='%23FAF6EF'%3EW%3C/text%3E%3C/svg%3E">
-<meta name="robots" content="noindex">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Privacy Policy · Wisdom Workshop</title>
+<meta name="description" content="What we collect, why, and what we will never do with it. The Wisdom Workshop privacy policy.">
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-  :root{--cream:#FAF6EF;--ink:#2C2620;--ink-soft:#5C5347;--terra:#BC5F33;--line:rgba(44,38,32,.14)}
+  :root{
+    --cream:#FAF6EF; --cream-deep:#F3ECDF; --ink:#2C2620; --ink-soft:#5C5347;
+    --terra:#BC5F33; --terra-deep:#9C4A24; --sage:#6B7F59; --gold:#C9A227;
+    --line:rgba(44,38,32,.14);
+    --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+    --sans:'DM Sans',-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;
+  }
   *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;font-size:16.5px}
-  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
-  h1,h2{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.2}
-  h1{font-size:2.6rem;margin-bottom:8px}
-  h2{font-size:1.6rem;margin:44px 0 12px;color:var(--terra)}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.72;font-size:17px;-webkit-font-smoothing:antialiased}
+  body::after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.05;z-index:999;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");}
+  h1,h2,h3,.serif{font-family:var(--serif);font-weight:600;line-height:1.18}
+  a{color:var(--terra)} a:hover{color:var(--terra-deep)}
+  .wrap{max-width:720px;margin:0 auto;padding:0 24px}
+
+  header.bar{position:sticky;top:0;z-index:60;background:rgba(250,246,239,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar-inner{max-width:720px;margin:0 auto;padding:13px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .brand{font-family:var(--serif);font-size:1.14rem;font-weight:700;color:var(--ink);text-decoration:none;line-height:1.2}
+  .brand small{display:block;font-family:var(--sans);font-size:.57rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);font-weight:400;margin-top:2px}
+  .bar-links{display:flex;gap:18px;font-size:.84rem}
+  .bar-links a{color:var(--ink-soft);text-decoration:none}
+  .bar-links a:hover{color:var(--terra)}
+
+  .hero{padding:70px 0 34px}
+  .eyebrow{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);font-weight:500;margin-bottom:12px}
+  h1{font-size:clamp(2.2rem,5.4vw,3.2rem);margin-bottom:16px}
+  .lede{font-size:1.14rem;color:var(--ink-soft)}
+  .updated{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);
+    margin-top:26px;padding-top:18px;border-top:1px solid var(--line)}
+
+  main{padding-bottom:40px}
+  section.clause{padding:30px 0;border-top:1px solid var(--line)}
+  section.clause:first-of-type{border-top:none}
+  h2{font-size:1.5rem;margin-bottom:12px}
+  h2 .num{font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.18em;
+    color:var(--terra);display:block;margin-bottom:5px}
   p{margin-bottom:14px;color:var(--ink-soft)}
-  a{color:var(--terra);text-decoration:none}
-  a:hover{text-decoration:underline}
-  nav{border-bottom:1px solid var(--line);padding:16px 0}
-  nav .wrap{display:flex;justify-content:space-between;align-items:center}
-  .brand{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--ink)}
-  header{padding:64px 0 8px}
-  .updated{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
-  main{padding-bottom:80px}
-  footer{border-top:1px solid var(--line);padding:36px 0;font-size:.85rem;color:var(--ink-soft)}
-  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+  p:last-child{margin-bottom:0}
+  p strong{color:var(--ink);font-weight:500}
+  dl{margin:0}
+  dl div{padding:12px 0;border-top:1px solid rgba(92,83,71,.11)}
+  dl div:first-child{border-top:none}
+  dt{font-weight:500;color:var(--ink);margin-bottom:2px}
+  dd{color:var(--ink-soft)}
+
+  .never{background:var(--ink);color:var(--cream);border-radius:18px;padding:30px 30px;margin:6px 0}
+  .never h2{color:var(--cream)}
+  .never h2 .num{color:var(--gold)}
+  .never p{color:rgba(250,246,239,.88);margin-bottom:0}
+  .never p em{font-style:italic;color:var(--gold)}
+
+  .contact{background:var(--cream-deep);border:1px solid var(--line);border-radius:18px;padding:28px 28px;margin-top:34px}
+  .contact h2{font-size:1.4rem;margin-bottom:8px}
+  .contact p{margin-bottom:0}
+
+  footer{border-top:1px solid var(--line);padding:40px 0 64px;font-size:.85rem;color:var(--ink-soft)}
+  .foot-links{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px}
+  .foot-links a{color:var(--ink-soft)} .foot-links a:hover{color:var(--terra)}
+
+  @media print{header.bar{display:none}body{font-size:11pt}body::after{display:none}
+    .never{background:#fff;color:#000;border:1px solid #ccc}.never h2,.never p{color:#000}}
 </style>
 </head>
 <body>
 
-<nav><div class="wrap"><a class="brand" href="index.html">← Wisdom Workshop</a><a href="https://wisdomworkshop-terms.netlify.app">Terms</a></div></nav>
-
-<header class="wrap">
-  <h1>Privacy Policy</h1>
-  <p class="updated">Last updated June 12, 2026</p>
+<header class="bar">
+  <div class="bar-inner">
+    <a class="brand" href="perma.html">Wisdom Workshop<small>Privacy Policy</small></a>
+    <div class="bar-links">
+      <a href="perma.html">The perMA</a>
+      <a href="https://wisdomworkshop-terms.netlify.app" target="_blank" rel="noopener">Terms</a>
+    </div>
+  </div>
 </header>
 
-<main class="wrap">
-  <p>The Wisdom Workshop exists because people trust each other with what matters. That trust extends to your data. This policy describes what we collect, why, and what we will never do with it.</p>
+<div class="wrap">
 
-  <h2>1. What we collect</h2>
-  <p><strong>Enrollment information:</strong> your name, email address, time zone, and whatever you choose to share in welcome conversations and intake forms.</p>
-  <p><strong>Payment information:</strong> processed entirely by Stripe. We never see or store your card number. Stripe's privacy policy governs payment data.</p>
-  <p><strong>Session content:</strong> live sessions on Zoom are recorded for the benefit of enrolled participants. Recordings, transcripts, and field notes contain what you say and share in session.</p>
-  <p><strong>Correspondence:</strong> emails you send us, scheduling data via Calendly, and responses to forms (e.g., the Co-Creative Partnership application via Google Forms).</p>
+  <div class="hero">
+    <p class="eyebrow">Wisdom Workshop</p>
+    <h1>Privacy Policy</h1>
+    <p class="lede">The Wisdom Workshop exists because people trust each other with what matters. That trust extends to your data. This policy describes what we collect, why, and what we will never do with it.</p>
+    <p class="updated">Last updated June 12, 2026</p>
+  </div>
 
-  <h2>2. How we use it</h2>
-  <p>To run the programs you enrolled in: scheduling, session recordings and field notes for your cohort, 1:1 coaching, certificates of completion, and community connection features like the Synchronicity Digest. To improve the curriculum, in aggregate and anonymized form. And to write to you — which you can opt out of any time, with one click or one reply.</p>
+  <main>
 
-  <h2>3. Session recordings, transcripts, and consent</h2>
-  <p>Recordings and transcripts are shared only with the members of your cohort and are never made public. Nothing you write, say, or share in a session is quoted publicly — in testimonials, newsletters, social media, or research — without your explicit, specific, and revocable consent. We will show you the exact excerpt before anything is shared, and a no is always honored without explanation. This is the same Hearth / Open Air consent framework described in our <a href="https://wisdomworkshop-terms.netlify.app">Terms of Participation</a>.</p>
-  <p>If you later revoke consent for an excerpt already shared, we will remove it from everything we control promptly.</p>
+    <section class="clause">
+      <h2><span class="num">One</span>What we collect</h2>
+      <dl>
+        <div>
+          <dt>Enrollment information</dt>
+          <dd>Your name, email address, time zone, and whatever you choose to share in welcome conversations and intake forms.</dd>
+        </div>
+        <div>
+          <dt>Payment information</dt>
+          <dd>Processed entirely by Stripe. We never see or store your card number. Stripe's privacy policy governs payment data.</dd>
+        </div>
+        <div>
+          <dt>Session content</dt>
+          <dd>Live sessions on Zoom are recorded for the benefit of enrolled participants. Recordings, transcripts, and field notes contain what you say and share in session.</dd>
+        </div>
+        <div>
+          <dt>Correspondence</dt>
+          <dd>Emails you send us, scheduling data via Calendly, and responses to forms (e.g., the Co-Creative Partnership application via Google Forms).</dd>
+        </div>
+      </dl>
+    </section>
 
-  <h2>4. What we never do</h2>
-  <p>We never sell your data. We never share your contact information with third parties for marketing. We never use your session content to train AI systems without your explicit consent. We never publish participant writing without permission — not even beautifully.</p>
+    <section class="clause">
+      <h2><span class="num">Two</span>How we use it</h2>
+      <p>To run the programs you enrolled in: scheduling, session recordings and field notes for your cohort, 1:1 coaching, certificates of completion, and community connection features like the Synchronicity Digest. To improve the curriculum, in aggregate and anonymized form. And to write to you — which you can opt out of any time, with one click or one reply.</p>
+    </section>
 
-  <h2>5. Third-party services</h2>
-  <p>We rely on a small set of tools, each governed by its own privacy policy: <strong>Stripe</strong> (payments), <strong>Zoom</strong> (live sessions and recordings), <strong>Calendly</strong> (scheduling), <strong>Google Workspace / Google Forms</strong> (documents and applications), and <strong>Substack</strong> (the newsletter, if you subscribe). We choose tools with reasonable security practices, and we share with them only what's needed for them to work.</p>
+    <section class="clause">
+      <h2><span class="num">Three</span>Session recordings, transcripts, and consent</h2>
+      <p>Recordings and transcripts are shared only with the members of your cohort and are never made public. Nothing you write, say, or share in a session is quoted publicly — in testimonials, newsletters, social media, or research — without your <strong>explicit, specific, and revocable consent</strong>. We will show you the exact excerpt before anything is shared, and a no is always honored without explanation. This is the same Hearth / Open Air consent framework described in our <a href="https://wisdomworkshop-terms.netlify.app" target="_blank" rel="noopener">Terms of Participation</a>.</p>
+      <p>If you later revoke consent for an excerpt already shared, we will remove it from everything we control promptly.</p>
+    </section>
 
-  <h2>6. Retention</h2>
-  <p>Session recordings and transcripts are retained for the duration of your cohort plus a reasonable archival period for alumni access, then deleted or anonymized. Enrollment records are kept as needed for certificates, alumni pricing, and legal obligations. If you'd like your recordings or records deleted sooner, ask — we'll do it.</p>
+    <div class="never">
+      <h2><span class="num">Four</span>What we never do</h2>
+      <p>We never sell your data. We never share your contact information with third parties for marketing. We never use your session content to train AI systems without your explicit consent. We never publish participant writing without permission — <em>not even beautifully</em>.</p>
+    </div>
 
-  <h2>7. Your rights</h2>
-  <p>You may request a copy of the personal data we hold about you, ask us to correct it, or ask us to delete it. Email <a href="mailto:woodstackrecords@gmail.com">woodstackrecords@gmail.com</a> and we'll respond within 30 days. If you're in a jurisdiction with specific data rights (GDPR, CCPA, and friends), we honor the spirit of those frameworks for everyone, regardless of geography.</p>
+    <section class="clause" style="border-top:none;padding-top:34px">
+      <h2><span class="num">Five</span>Third-party services</h2>
+      <p>We rely on a small set of tools, each governed by its own privacy policy: Stripe (payments), Zoom (live sessions and recordings), Calendly (scheduling), Google Workspace / Google Forms (documents and applications), and Substack (the newsletter, if you subscribe). We choose tools with reasonable security practices, and we share with them only what's needed for them to work.</p>
+    </section>
 
-  <h2>8. Children</h2>
-  <p>Our programs are designed for adults. We do not knowingly collect data from anyone under 18. Custom programming for teens, when offered, is arranged directly with schools and guardians under separate agreements.</p>
+    <section class="clause">
+      <h2><span class="num">Six</span>Retention</h2>
+      <p>Session recordings and transcripts are retained for the duration of your cohort plus a reasonable archival period for alumni access, then deleted or anonymized. Enrollment records are kept as needed for certificates, alumni pricing, and legal obligations. If you'd like your recordings or records deleted sooner, ask — we'll do it.</p>
+    </section>
 
-  <h2>9. Changes</h2>
-  <p>If this policy changes in any way that matters, enrolled participants and community members will hear it from us directly by email — not discover it in a diff.</p>
+    <section class="clause">
+      <h2><span class="num">Seven</span>Your rights</h2>
+      <p>You may request a copy of the personal data we hold about you, ask us to correct it, or ask us to delete it. Email <a href="mailto:sean@wisdomworkshop.io">sean@wisdomworkshop.io</a> and we'll respond within 30 days. If you're in a jurisdiction with specific data rights (GDPR, CCPA, and friends), we honor the spirit of those frameworks for everyone, regardless of geography.</p>
+    </section>
 
-  <h2>10. Contact</h2>
-  <p>Questions about your data: <a href="mailto:woodstackrecords@gmail.com">woodstackrecords@gmail.com</a>.</p>
-</main>
+    <section class="clause">
+      <h2><span class="num">Eight</span>Children</h2>
+      <p>Our programs are designed for adults. We do not knowingly collect data from anyone under 18. Custom programming for teens, when offered, is arranged directly with schools and guardians under separate agreements.</p>
+    </section>
+
+    <section class="clause">
+      <h2><span class="num">Nine</span>Changes</h2>
+      <p>If this policy changes in any way that matters, enrolled participants and community members will hear it from us directly by email — not discover it in a diff.</p>
+    </section>
+
+    <div class="contact">
+      <h2><span class="num">Ten</span>Contact</h2>
+      <p>Questions about your data: <a href="mailto:sean@wisdomworkshop.io">sean@wisdomworkshop.io</a>.</p>
+    </div>
+
+  </main>
+</div>
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Wisdom Workshop · Sean Waters · Fort Collins, Colorado</span>
-    <span><a href="index.html">Home</a> · <a href="https://wisdomworkshop-terms.netlify.app">Terms</a></span>
+    <strong style="font-family:var(--serif);font-size:1.1rem">Wisdom Workshop</strong><br>
+    Sean Waters · Fort Collins, Colorado
+    <div class="foot-links">
+      <a href="perma.html">The perMA</a>
+      <a href="world-philosophy.html">World Philosophy</a>
+      <a href="https://wisdomworkshop-terms.netlify.app" target="_blank" rel="noopener">Terms of Participation</a>
+      <a href="https://wisdomworkshop.io">Wisdom Workshop</a>
+    </div>
   </div>
 </footer>
 
