@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <link rel="icon" type="image/png" href="/favicon.png">
 <title>Good Life Facilitation</title>
-<meta name="description" content="Good Life Facilitation: a five-week Wisdom Workshop on culturing containers for community, with Rogers, Heider, Taylor, Stelter, and Yalom. Nov 10 – Dec 18, 2026, on Zoom or in Fort Collins.">
+<meta name="description" content="Good Life Facilitation: a five-week Wisdom Workshop on culturing containers for community, with Rogers, Heider, Taylor, Stelter, and Yalom. Nov 10 – Dec 18, 2026, on Zoom or in Fort Collins. Schedule, readings, tuition, and application.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap">
 <style>
@@ -38,7 +38,7 @@ h1,h2,h3{font-family:var(--display);font-weight:500;text-wrap:balance;line-heigh
 h1{font-size:clamp(46px,9vw,76px);letter-spacing:-.01em;margin-top:14px}
 h1 em{font-style:italic;color:var(--accent)}
 h2{font-size:clamp(30px,5vw,38px);margin-bottom:16px}
-.lede{font-family:var(--display);font-size:clamp(22px,3.6vw,27px);line-height:1.4;color:var(--ink);margin:22px 0 0}
+.lede{margin-bottom:14px !important;font-family:var(--display);font-size:clamp(22px,3.6vw,27px);line-height:1.4;color:var(--ink);margin:22px 0 0}
 .facts{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:26px;font-size:14.5px;color:var(--muted)}
 .facts b{color:var(--ink);font-weight:600}
 .btn{display:inline-block;background:var(--accent);color:var(--accent-ink);font:600 15px var(--body);padding:13px 22px;border-radius:999px;text-decoration:none;border:0;cursor:pointer}
@@ -54,19 +54,7 @@ p{margin:0 0 16px}
 .pull{font-family:var(--display);font-size:clamp(25px,4.2vw,32px);line-height:1.3;margin:28px 0;padding-left:20px;border-left:2px solid var(--accent)}
 .pull cite{display:block;font:500 13px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px;font-style:normal}
 
-.slow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-top:24px}
-.slow > div{background:var(--surface);padding:18px 16px;min-width:0}
-.slow .letter{font-family:var(--display);font-size:54px;line-height:1;color:var(--accent)}
-.slow .word{font:600 13px var(--body);letter-spacing:.12em;text-transform:uppercase;margin-top:6px}
-.slow ul{list-style:none;padding:0;margin:12px 0 0;font-size:14px;color:var(--muted);display:grid;gap:10px}
-.slow ul b{display:block;color:var(--ink);font-weight:600}
-@media (max-width:620px){.slow{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
-.shelf{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:12px}
-.shelf li{display:grid;grid-template-columns:110px 1fr;gap:12px;font-size:15.5px;padding-bottom:12px;border-bottom:1px solid var(--line)}
-.shelf .when{color:var(--muted);font-variant-numeric:tabular-nums;font-size:14px}
-.shelf i{font-family:var(--display);font-size:19px}
-@media (max-width:460px){.shelf li{grid-template-columns:1fr;gap:2px}}
 
 dl.practical{display:grid;grid-template-columns:140px 1fr;gap:10px 18px;margin:0;font-size:15.5px}
 dl.practical dt{color:var(--muted)}
@@ -95,84 +83,163 @@ legend{font-weight:500;font-size:15px;margin-bottom:6px}
 .sign{font:600 13px var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-top:48px}
 .bio{font-size:15px;color:var(--muted)}
 @media (prefers-reduced-motion:no-preference){.btn{transition:transform .15s}.btn:hover{transform:translateY(-1px)}}
+section h2{margin-bottom:14px}
+.voices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:8px}
+.voices figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 18px 16px}
+.voices blockquote{margin:0;font-family:var(--display);font-size:21px;line-height:1.38}
+.voices figcaption{font:500 13px var(--body);color:var(--muted);margin-top:10px;letter-spacing:.02em}
+@media (max-width:620px){.voices{grid-template-columns:1fr}}
+.weeks{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:0;border-top:1px solid var(--line)}
+.weeks li{display:grid;grid-template-columns:110px minmax(0,1fr);gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}
+.wk{display:flex;flex-direction:column;gap:4px}
+.wk .date{font-weight:600;font-variant-numeric:tabular-nums}
+.wk .theme{font:600 12px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.wk-body h3{font-size:26px;margin-bottom:4px}
+.wk-body p{margin:0 0 8px;font-size:15.5px}
+.wk-body .book{color:var(--muted)}
+.wk-body .q{font-family:var(--display);font-size:20px;line-height:1.35;font-style:italic;color:var(--ink)}
+.weeks li.pause .wk-body p{color:var(--muted);font-style:italic}
+@media (max-width:460px){.weeks li{grid-template-columns:1fr;gap:6px}.wk{flex-direction:row;gap:12px;align-items:baseline}}
+.garden{font-size:24px}
+.apply{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:28px 24px}
+.pull{margin:0}
+.facilitator{display:grid;grid-template-columns:160px minmax(0,1fr);gap:24px;align-items:start}
+.facilitator img{width:160px;height:160px;object-fit:cover;border-radius:50%;border:1px solid var(--line)}
+.facilitator p{font-size:15.5px}
+.facilitator .kind{font-family:var(--display);font-style:italic;font-size:21px;line-height:1.35}
+@media (max-width:520px){.facilitator{grid-template-columns:1fr}.facilitator img{width:120px;height:120px}}
+.leave{list-style:none;padding:0;margin:8px 0 16px;display:grid;gap:14px}
+.leave li{padding-left:22px;position:relative}
+.leave li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.ps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0 14px}
+.ps > div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 12px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.ps .rel{font:600 12px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.ps .p{font-family:var(--display);font-size:22px;line-height:1.2}
+@media (max-width:520px){.ps{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 </head>
 <body>
 <main>
   <p class="back" style="font-size:14px;margin:0 0 28px"><a href="/">← Wisdom Workshop</a></p>
+
   <header>
-    <div class="eyebrow">Wisdom Workshop · Nov 10 – Dec 18</div>
+    <div class="eyebrow">Wisdom Workshop · Nov 10 – Dec 18, 2026</div>
     <h1>Good Life <em>Facilitation</em></h1>
-    <p class="lede">Culturing containers for community. For people who want to gather others in the spirit of joy.</p>
-    <div class="facts"><span><b>5</b> weeks</span><span><b>5</b> books</span><span><b>3</b> groups: Zoom or Fort Collins</span><span><b>8</b> seats per group</span></div>
-    <div class="actions"><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdgUgRX4_abdDAm9KR8WvojvfxKBGPznWcyKYURy_k_zlFnng/viewform">Apply to join</a><a class="btn ghost" href="/good-life-facilitation-syllabus">Read the syllabus</a><a class="btn ghost" href="https://calendly.com/wisdomworkshop/15min">Talk with Sean first</a></div>
+    <p class="lede">Practical Wisdom for Gathering with the Spirit of Joy</p>
+    <p>Culturing containers for community: five weeks, five books, for leaders, teachers, coaches, facilitators, and anyone who wants to be more genuinely helpful in their relationships.</p>
+    <div class="facts"><span><b>Apply by Nov 10</b>, or until the circles fill</span><span><b>3 groups:</b> 2 on Zoom, 1 in Fort Collins</span><span><b>$695</b> · $495 for paid subscribers</span></div>
+    <div class="actions"><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdgUgRX4_abdDAm9KR8WvojvfxKBGPznWcyKYURy_k_zlFnng/viewform">Apply to join</a><a class="btn ghost" href="https://calendly.com/wisdomworkshop/15min">Talk with Sean first</a></div>
   </header>
 
   <section>
-    <p>An early teacher of mine described the <i>Tao Te Ching</i> as a magic mirror. Group leader John Heider sees it as a powerful guide for wise leaders, or as a way to practice more effective psychotherapy.</p>
-    <p>Besides the technical skills, what are the human skills most important for culturing community?</p>
-    <p>What do we need? Like an Epicurean garden, we need three things:</p>
-    <ul class="garden"><li>a wall</li><li>good snacks</li><li>good people</li><li class="plus">and here, good philosophy</li></ul>
+    <blockquote class="pull">“All of this inner work is necessary and fulfilling in lots of ways, but it doesn’t mean anything unless we take it back out into the world in some shape or form.”<cite>Paul S., World Philosophy, Fall 2026</cite></blockquote>
   </section>
 
   <section>
-    <blockquote class="pull">“All of this inner work is necessary and fulfilling… but it doesn’t mean anything unless we take it back out into the world. We have to dance it out into the world in some way.”<cite>Quinn, World Philosophy fellow, Fall 2026</cite></blockquote>
-    <p>For anyone with a community they’re building, want to build, or want to contribute to.</p>
-  </section>
-
-  <section>
-    <h2>SLOW facilitation</h2>
-    <p>Our five weeks move through the Seven Ps of a good life, each echoing a world philosophy or two. For coaches and facilitators, we consider our relationships with self, life, others, and world.</p>
-    <div class="slow" role="list">
-      <div role="listitem"><div class="letter">S</div><div class="word">Self</div><ul><li><b>Presence + Purpose</b>Nov 11</li></ul></div>
-      <div role="listitem"><div class="letter">L</div><div class="word">Life</div><ul><li><b>Play</b>Nov 18</li><li><b>Projects</b>Dec 2</li></ul></div>
-      <div role="listitem"><div class="letter">O</div><div class="word">Others</div><ul><li><b>People</b>Dec 9</li><li><b>Process</b>Dec 16</li></ul></div>
-      <div role="listitem"><div class="letter">W</div><div class="word">World</div><ul><li><b>Perspective</b>Dec 16–18: our closing celebration</li></ul></div>
+    <h2>From past circles</h2>
+    <div class="voices">
+      <figure><blockquote>“I’m grateful for the gentle leadership and the guidance that brings focus and brings the rhythm of writing and journaling back into my life.”</blockquote><figcaption>Lisa F., World Philosophy, Fall 2026</figcaption></figure>
+      <figure><blockquote>“I learned I can create this kind of a community in my own life, with intention: give compassionate space to everyone to dig deep.”</blockquote><figcaption>Bennie, Student, Fort Collins, CO</figcaption></figure>
+      <figure><blockquote>“This course helped me clarify what matters, helped me move through the challenges I have with my team.”</blockquote><figcaption>Chance Thompson, Big Sky, MT</figcaption></figure>
+      <figure><blockquote>“You were all so present and aware, and the feedback and the empathy that you all shared was super meaningful to me.”</blockquote><figcaption>Suzanne Rossi, Coach, Consultant, and Therapist, Philadelphia, PA</figcaption></figure>
     </div>
   </section>
 
-  <section>
-    <h2>The reading shelf</h2>
-    <ul class="shelf">
-      <li><span class="when">Nov 11</span><span>Carl Rogers, <a href="https://search.worldcat.org/title/6602382"><i>A Way of Being</i></a></span></li>
-      <li><span class="when">Nov 18</span><span>John Heider, <a href="https://search.worldcat.org/title/11133132"><i>The Tao of Leadership</i></a></span></li>
-      <li><span class="when">Dec 2</span><span>Marilyn M. Taylor, <a href="https://search.worldcat.org/search?q=bn:9780230603677"><i>Emergent Learning for Wisdom</i></a></span></li>
-      <li><span class="when">Dec 9</span><span>Reinhard Stelter, <a href="https://search.worldcat.org/search?q=bn:9789400771857"><i>A Guide to Third Generation Coaching</i></a></span></li>
-      <li><span class="when">Dec 16</span><span>Irvin Yalom &amp; Molyn Leszcz, <a href="https://search.worldcat.org/title/1240762889"><i>The Theory and Practice of Group Psychotherapy</i></a></span></li>
-    </ul>
-    <p class="note" style="margin-top:12px">Links go to WorldCat, so you can find each book at a library near you. Weekly questions and invitations are in the <a href="/good-life-facilitation-syllabus">full syllabus</a>.</p>
+  <section class="facilitator">
+    <img src="/sean.jpg" alt="Sean Waters" width="160" height="160">
+    <div>
+      <h2>Your facilitator</h2>
+      <p>Sean Waters has taught writing at Colorado State University for 17 years and holds master’s degrees in Philosophy and English Education. He founded the Wisdom Workshop in 2021 and has led more than 1,500 hours of small-group facilitation with 115+ participants in 9 countries.</p>
+      <p class="kind">“Sean has a gift for warmth, genuineness, and unconditional positive regard.”</p>
+    </div>
   </section>
 
+
   <section>
-    <h2>A doorway into the perMA</h2>
-    <p>Good Life Facilitation stands on its own, and it is also a doorway into the perMA, our twelve-month, person-centered Master of Arts.</p>
+    <h2>What you’ll leave with</h2>
+    <ul class="leave">
+      <li><b>A facilitation practice you’ve tested.</b> Each week you write a short process letter on how you’re holding your own groups, toward an end-of-2026 goal.</li>
+      <li><b>A written commitment</b> to the community you’re building, want to build, or want to contribute to.</li>
+      <li><b>A finals presentation</b> to a circle that has watched you grow, followed by an exit conversation.</li>
+    </ul>
+    <p class="note">Our map is the three Taoist treasures (verse 67): simplicity → generosity, deep love → courage, equality → leadership.</p>
+  </section>
+
+  <section id="syllabus">
+    <h2>The five weeks</h2>
+    <p>We move through the Seven Ps of Good Life Writing, held in four relationships: <b>S</b>elf, <b>L</b>ife, <b>O</b>thers, and <b>W</b>orld. That’s SLOW facilitation.</p>
+    <div class="ps" role="list">
+      <div role="listitem"><span class="rel">Self</span><span class="p">Presence</span><span class="p">Purpose</span></div>
+      <div role="listitem"><span class="rel">Life</span><span class="p">Play</span><span class="p">Projects</span></div>
+      <div role="listitem"><span class="rel">Others</span><span class="p">People</span><span class="p">Process</span></div>
+      <div role="listitem"><span class="rel">World</span><span class="p">Perspective</span></div>
+    </div>
+    <p class="note">Dates below are for the Wednesday groups; the Tuesday group meets the day before.</p>
+    <ol class="weeks">
+      <li>
+        <div class="wk"><span class="date">Nov 11</span><span class="theme">Self</span></div>
+        <div class="wk-body"><h3>Presence + Purpose</h3>
+          <p class="book">Carl Rogers, <a href="https://search.worldcat.org/title/6602382"><i>A Way of Being</i></a></p>
+          <p class="q">Besides the technical skills, what are the human skills most important for culturing community?</p>
+          <p>The containers we build are ours to tend. Rogers’ conditions of the helping relationship. Your first process letter: your purpose, and the community you’re building.</p></div>
+      </li>
+      <li>
+        <div class="wk"><span class="date">Nov 18</span><span class="theme">Life</span></div>
+        <div class="wk-body"><h3>Play</h3>
+          <p class="book">John Heider, <a href="https://search.worldcat.org/title/11133132"><i>The Tao of Leadership</i></a></p>
+          <p class="q">How might you guard and keep the treasures of deep love, simplicity, and humility?</p>
+          <p>A good group leader on leading and teaching. Effortless action: facilitation is like the Tao.</p></div>
+      </li>
+      <li class="pause">
+        <div class="wk"><span class="date">Nov 24/25</span></div>
+        <div class="wk-body"><p>No meeting for Thanksgiving. Catch up, and dance your thanks.</p></div>
+      </li>
+      <li>
+        <div class="wk"><span class="date">Dec 2</span><span class="theme">Life</span></div>
+        <div class="wk-body"><h3>Projects</h3>
+          <p class="book">Marilyn M. Taylor, <a href="https://search.worldcat.org/search?q=bn:9780230603677"><i>Emergent Learning for Wisdom</i></a></p>
+          <p class="q">How do we build the garden wall, serve good snacks, and gather good people to cultivate emergent learning for wisdom?</p>
+          <p>Self-directed learning and the stages it unfolds in.</p></div>
+      </li>
+      <li>
+        <div class="wk"><span class="date">Dec 9</span><span class="theme">Others</span></div>
+        <div class="wk-body"><h3>People</h3>
+          <p class="book">Reinhard Stelter, <a href="https://search.worldcat.org/search?q=bn:9789400771857"><i>A Guide to Third Generation Coaching</i></a> (PDF provided)</p>
+          <p class="q">Who are the people you want to learn with? What is third-generation coaching, and why does it matter now?</p>
+          <p>Symmetry between dialogue partners; narrative and collaborative meaning-making. The foundation for one-on-ones and for the writing group you need.</p></div>
+      </li>
+      <li>
+        <div class="wk"><span class="date">Dec 16</span><span class="theme">Others</span></div>
+        <div class="wk-body"><h3>Process</h3>
+          <p class="book">Irvin Yalom &amp; Molyn Leszcz, <a href="https://search.worldcat.org/title/1240762889"><i>The Theory and Practice of Group Psychotherapy</i></a></p>
+          <p class="q">What are the healing factors in any group? How do you cultivate therapeutic group dynamics in your community?</p>
+          <p>The therapeutic factors of groups. Prepare your finals presentation and exit conversation.</p></div>
+      </li>
+      <li>
+        <div class="wk"><span class="date">Dec 16–18</span><span class="theme">World</span></div>
+        <div class="wk-body"><h3>Perspective</h3>
+          <p class="q">What does it look like to dance your thanks?</p>
+          <p>Celebrations, presentations, and exit interviews, for the cohort and for the year. To give back: the inner work is meant to be shared.</p></div>
+      </li>
+    </ol>
   </section>
 
   <section>
     <h2>The practical bits</h2>
     <dl class="practical">
-      <dt>Groups</dt><dd>Wednesdays, Nov 11 – Dec 16, 9:30–10:45am MST on Zoom<br>Wednesdays, Nov 11 – Dec 16, 6:00–7:15pm MST on Zoom<br>Tuesdays, Nov 10 – Dec 15, 4:45–6:00pm MST in Fort Collins</dd>
+      <dt>Apply by</dt><dd>Tuesday, Nov 10, or until the circles fill</dd>
+      <dt>Groups</dt><dd>Wednesdays, Nov 11 – Dec 16, 9:30–10:45am MST on Zoom<br>Wednesdays, Nov 11 – Dec 16, 6:00–7:15pm MST on Zoom<br>Tuesdays, Nov 10 – Dec 15, 4:45–6:00pm MST in Fort Collins (rotating locations, shared on acceptance)</dd>
       <dt>Thanksgiving</dt><dd>No meetings Nov 24/25</dd>
-      <dt>Finals</dt><dd>Celebrations, presentations and exit interviews, Wednesday – Friday, Dec 16–18 (times to be announced)</dd>
       <dt>Time</dt><dd>A 75-minute gathering, plus two to three hours a week on your own</dd>
       <dt>Group size</dt><dd>Eight seats per group, by application and friendly invitation</dd>
       <dt>Tuition</dt><dd>$695. Paid Substack subscribers: $495. Continuing perMA fellows: $200/month. Payment plans and needs-based scholarships available.</dd>
+      <dt>The perMA</dt><dd>This workshop stands on its own, and it is also a doorway into <a href="/perma">the perMA</a>, our twelve-month, person-centered Master of Arts.</dd>
     </dl>
   </section>
 
-  <section>
-    <h2>From the last circle</h2>
-    <div class="voices">
-      <div><blockquote>“I’m grateful for the gentle leadership and the guidance that brings focus and brings the rhythm of writing and journaling back into my life.”</blockquote><footer>Maria</footer></div>
-      <div><blockquote>“I feel I can be weird and authentic and show up wherever I am on any given day.”</blockquote><footer>Nina</footer></div>
-      <div><blockquote>“Every step, every breath… we’re already dancing. It’s already a song.”</blockquote><footer>Hazel</footer></div>
-    </div>
-    <p class="note" style="margin-top:14px">Names changed.</p>
-  </section>
-
-  <section id="apply">
+  <section id="apply" class="apply">
     <h2>Apply</h2>
-    <p>A few short questions about you and the community you’re building, or want to build, or want to contribute to. Sean reads every application and replies personally.</p>
+    <p>A few short questions about you and the community you’re building, want to build, or want to contribute to. Sean reads every application and replies personally.</p>
     <div class="actions"><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdgUgRX4_abdDAm9KR8WvojvfxKBGPznWcyKYURy_k_zlFnng/viewform">Open the application</a><a class="btn ghost" href="https://calendly.com/wisdomworkshop/15min">Talk with Sean first</a></div>
     <p class="note" style="margin-top:16px">When you enroll, you agree to our <a href="https://o-perma-orientation-before-you-arrive.netlify.app">code of conduct</a> and our <a href="https://wisdomworkshop-terms.netlify.app">terms of participation</a>.</p>
   </section>
@@ -180,7 +247,6 @@ legend{font-weight:500;font-size:15px;margin-bottom:6px}
   <section>
     <p class="vow">I will live my truth openly and honestly<br>In the light of my growing consciousness<br>Responsible for the consequences of my choices<br>And acting in behalf of all creation.</p>
     <p class="note">— John Heider</p>
-    <p class="bio" style="margin-top:36px">Sean Waters has taught writing at Colorado State University for 17 years and holds master’s degrees in Philosophy and English Education. He founded the Wisdom Workshop in 2021 and has led more than 1,500 hours of small-group facilitation with 115+ participants in 9 countries. He has also played over 1,000 shows across the Colorado Front Range.</p>
     <p class="sign">Kindness is intelligence</p>
   </section>
 </main>
