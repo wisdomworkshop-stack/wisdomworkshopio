@@ -102,6 +102,15 @@ section h2{margin-bottom:14px}
 @media (max-width:460px){.weeks li{grid-template-columns:1fr;gap:6px}.wk{flex-direction:row;gap:12px;align-items:baseline}}
 .garden{font-size:24px}
 .apply{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:28px 24px}
+.pull{margin:0}
+.facilitator{display:grid;grid-template-columns:160px minmax(0,1fr);gap:24px;align-items:start}
+.facilitator img{width:160px;height:160px;object-fit:cover;border-radius:50%;border:1px solid var(--line)}
+.facilitator p{font-size:15.5px}
+.facilitator .kind{font-family:var(--display);font-style:italic;font-size:21px;line-height:1.35}
+@media (max-width:520px){.facilitator{grid-template-columns:1fr}.facilitator img{width:120px;height:120px}}
+.leave{list-style:none;padding:0;margin:8px 0 16px;display:grid;gap:14px}
+.leave li{padding-left:22px;position:relative}
+.leave li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;border-radius:50%;background:var(--accent)}
 </style>
 </head>
 <body>
@@ -111,27 +120,44 @@ section h2{margin-bottom:14px}
   <header>
     <div class="eyebrow">Wisdom Workshop · Nov 10 – Dec 18, 2026</div>
     <h1>Good Life <em>Facilitation</em></h1>
-    <p class="lede">Culturing containers for community. Five weeks, five books, for people who want to gather others in the spirit of joy.</p>
-    <p>For anyone who wants to be more genuinely helpful in their relationships: leaders, teachers, coaches, facilitators, and anyone who gathers people.</p>
-    <div class="facts"><span><b>3 groups:</b> 2 on Zoom, 1 in Fort Collins</span><span><b>8</b> seats per group</span><span>From <b>$200/month</b> for fellows</span></div>
+    <p class="lede">You’re already the one who gathers people. Come learn the gentle art of holding them.</p>
+    <p>Culturing containers for community: five weeks, five books, for leaders, teachers, coaches, facilitators, and anyone who wants to be more genuinely helpful in their relationships.</p>
+    <div class="facts"><span><b>Apply by Nov 10</b>, or until the circles fill</span><span><b>3 groups:</b> 2 on Zoom, 1 in Fort Collins</span><span><b>$695</b> · $495 for paid subscribers</span></div>
     <div class="actions"><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdgUgRX4_abdDAm9KR8WvojvfxKBGPznWcyKYURy_k_zlFnng/viewform">Apply to join</a><a class="btn ghost" href="https://calendly.com/wisdomworkshop/15min">Talk with Sean first</a></div>
   </header>
 
   <section>
+    <blockquote class="pull">“All of this inner work is necessary and fulfilling in lots of ways, but it doesn’t mean anything unless we take it back out into the world in some shape or form.”<cite>Paul Salinger, World Philosophy, Fall 2026</cite></blockquote>
+  </section>
+
+  <section>
     <h2>From past circles</h2>
     <div class="voices">
+      <figure><blockquote>“I’m grateful for the gentle leadership and the guidance that brings focus and brings the rhythm of writing and journaling back into my life.”</blockquote><figcaption>Lisa Feintech, World Philosophy, Fall 2026</figcaption></figure>
       <figure><blockquote>“I learned I can create this kind of a community in my own life, with intention: give compassionate space to everyone to dig deep.”</blockquote><figcaption>Bennie, Student, Fort Collins, CO</figcaption></figure>
       <figure><blockquote>“This course helped me clarify what matters, helped me move through the challenges I have with my team.”</blockquote><figcaption>Chance Thompson, Big Sky, MT</figcaption></figure>
-      <figure><blockquote>“Your workshops are like nurturing grounds and launching pads… It’s a synergy, in a sacred space.”</blockquote><figcaption>Nancy Scannell, Facilitator and Writer, Indiana</figcaption></figure>
       <figure><blockquote>“You were all so present and aware, and the feedback and the empathy that you all shared was super meaningful to me.”</blockquote><figcaption>Suzanne Rossi, Coach, Consultant, and Therapist, Philadelphia, PA</figcaption></figure>
     </div>
   </section>
 
+  <section class="facilitator">
+    <img src="/sean.jpg" alt="Sean Waters" width="160" height="160">
+    <div>
+      <h2>Your facilitator</h2>
+      <p>Sean Waters has taught writing at Colorado State University for 17 years and holds master’s degrees in Philosophy and English Education. He founded the Wisdom Workshop in 2021 and has led more than 1,500 hours of small-group facilitation with 115+ participants in 9 countries.</p>
+      <p class="kind">“Sean has a gift for warmth, genuineness, and unconditional positive regard.”</p>
+    </div>
+  </section>
+
+
   <section>
-    <h2>What we practice</h2>
-    <p>Like an Epicurean garden: how do we build good walls, serve good snacks, and gather with good people? The three Taoist treasures (verse 67) give us a map of our shared commitments:</p>
-    <ul class="garden"><li>simplicity → generosity</li><li>deep love → courage</li><li>equality → leadership</li></ul>
-    <p>Each week you’ll write a short process letter on your own facilitation practice, working toward an end-of-2026 goal for your technical, human, and leadership skills. We close with three days of celebration, presentations, and exit interviews.</p>
+    <h2>What you’ll leave with</h2>
+    <ul class="leave">
+      <li><b>A facilitation practice you’ve tested.</b> Each week you write a short process letter on how you’re holding your own groups, toward an end-of-2026 goal.</li>
+      <li><b>A written commitment</b> to the community you’re building, want to build, or want to contribute to.</li>
+      <li><b>A finals presentation</b> to a circle that has watched you grow, followed by an exit conversation.</li>
+    </ul>
+    <p class="note">Our map is the three Taoist treasures (verse 67): simplicity → generosity, deep love → courage, equality → leadership.</p>
   </section>
 
   <section id="syllabus">
@@ -143,14 +169,14 @@ section h2{margin-bottom:14px}
         <div class="wk-body"><h3>Presence + Purpose</h3>
           <p class="book">Carl Rogers, <a href="https://search.worldcat.org/title/6602382"><i>A Way of Being</i></a></p>
           <p class="q">Besides the technical skills, what are the human skills most important for culturing community?</p>
-          <p>The containers we build are ours to tend. Rogers’ conditions of the helping relationship. <i>Echoes Buddhism and Aristotle.</i> Your first process letter: your purpose, and the community you’re building.</p></div>
+          <p>The containers we build are ours to tend. Rogers’ conditions of the helping relationship. Your first process letter: your purpose, and the community you’re building.</p></div>
       </li>
       <li>
         <div class="wk"><span class="date">Nov 18</span><span class="theme">Life</span></div>
         <div class="wk-body"><h3>Play</h3>
           <p class="book">John Heider, <a href="https://search.worldcat.org/title/11133132"><i>The Tao of Leadership</i></a></p>
           <p class="q">How might you guard and keep the treasures of deep love, simplicity, and humility?</p>
-          <p>A good group leader on leading and teaching. Effortless action: facilitation is like the Tao. <i>Echoes Taoism.</i></p></div>
+          <p>A good group leader on leading and teaching. Effortless action: facilitation is like the Tao.</p></div>
       </li>
       <li class="pause">
         <div class="wk"><span class="date">Nov 24/25</span></div>
@@ -161,27 +187,27 @@ section h2{margin-bottom:14px}
         <div class="wk-body"><h3>Projects</h3>
           <p class="book">Marilyn M. Taylor, <a href="https://search.worldcat.org/search?q=bn:9780230603677"><i>Emergent Learning for Wisdom</i></a></p>
           <p class="q">How do we build the garden wall, serve good snacks, and gather good people to cultivate emergent learning for wisdom?</p>
-          <p>Self-directed learning and the stages it unfolds in. <i>Echoes Stoicism, Epicureanism, and Pragmatism.</i></p></div>
+          <p>Self-directed learning and the stages it unfolds in.</p></div>
       </li>
       <li>
         <div class="wk"><span class="date">Dec 9</span><span class="theme">Others</span></div>
         <div class="wk-body"><h3>People</h3>
           <p class="book">Reinhard Stelter, <a href="https://search.worldcat.org/search?q=bn:9789400771857"><i>A Guide to Third Generation Coaching</i></a> (PDF provided)</p>
           <p class="q">Who are the people you want to learn with? What is third-generation coaching, and why does it matter now?</p>
-          <p>Symmetry between dialogue partners; narrative and collaborative meaning-making. The foundation for one-on-ones and for the writing group you need. <i>Echoes Buber’s I–Thou.</i></p></div>
+          <p>Symmetry between dialogue partners; narrative and collaborative meaning-making. The foundation for one-on-ones and for the writing group you need.</p></div>
       </li>
       <li>
         <div class="wk"><span class="date">Dec 16</span><span class="theme">Others</span></div>
         <div class="wk-body"><h3>Process</h3>
           <p class="book">Irvin Yalom &amp; Molyn Leszcz, <a href="https://search.worldcat.org/title/1240762889"><i>The Theory and Practice of Group Psychotherapy</i></a></p>
           <p class="q">What are the healing factors in any group? How do you cultivate therapeutic group dynamics in your community?</p>
-          <p>The therapeutic factors of groups. <i>Echoes Existentialism.</i> Prepare your finals presentation and exit conversation.</p></div>
+          <p>The therapeutic factors of groups. Prepare your finals presentation and exit conversation.</p></div>
       </li>
       <li>
         <div class="wk"><span class="date">Dec 16–18</span><span class="theme">World</span></div>
         <div class="wk-body"><h3>Perspective</h3>
           <p class="q">What does it look like to dance your thanks?</p>
-          <p>Celebrations, presentations, and exit interviews, for the cohort and for the year. To give back: the inner work is meant to be shared. <i>Echoes Indigenous wisdom: offering and gift.</i></p></div>
+          <p>Celebrations, presentations, and exit interviews, for the cohort and for the year. To give back: the inner work is meant to be shared.</p></div>
       </li>
     </ol>
   </section>
@@ -189,7 +215,9 @@ section h2{margin-bottom:14px}
   <section>
     <h2>The practical bits</h2>
     <dl class="practical">
-      <dt>Groups</dt><dd>Wednesdays, Nov 11 – Dec 16, 9:30–10:45am MST on Zoom<br>Wednesdays, Nov 11 – Dec 16, 6:00–7:15pm MST on Zoom<br>Tuesdays, Nov 10 – Dec 15, 4:45–6:00pm MST in Fort Collins</dd>
+      <dt>Apply by</dt><dd>Tuesday, Nov 10, or until the circles fill</dd>
+      <dt>Groups</dt><dd>Wednesdays, Nov 11 – Dec 16, 9:30–10:45am MST on Zoom<br>Wednesdays, Nov 11 – Dec 16, 6:00–7:15pm MST on Zoom<br>Tuesdays, Nov 10 – Dec 15, 4:45–6:00pm MST in Fort Collins (rotating locations, shared on acceptance)</dd>
+      <dt>Thanksgiving</dt><dd>No meetings Nov 24/25</dd>
       <dt>Time</dt><dd>A 75-minute gathering, plus two to three hours a week on your own</dd>
       <dt>Group size</dt><dd>Eight seats per group, by application and friendly invitation</dd>
       <dt>Tuition</dt><dd>$695. Paid Substack subscribers: $495. Continuing perMA fellows: $200/month. Payment plans and needs-based scholarships available.</dd>
@@ -205,7 +233,6 @@ section h2{margin-bottom:14px}
   </section>
 
   <section>
-    <p class="bio">Sean Waters has taught writing at Colorado State University for 17 years and holds master’s degrees in Philosophy and English Education. He founded the Wisdom Workshop in 2021 and has led more than 1,500 hours of small-group facilitation with 115+ participants in 9 countries. He has also played over 1,000 shows across the Colorado Front Range.</p>
     <p class="vow">I will live my truth openly and honestly<br>In the light of my growing consciousness<br>Responsible for the consequences of my choices<br>And acting in behalf of all creation.</p>
     <p class="note">— John Heider</p>
     <p class="sign">Kindness is intelligence</p>
