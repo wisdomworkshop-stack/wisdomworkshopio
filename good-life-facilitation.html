@@ -111,6 +111,11 @@ section h2{margin-bottom:14px}
 .leave{list-style:none;padding:0;margin:8px 0 16px;display:grid;gap:14px}
 .leave li{padding-left:22px;position:relative}
 .leave li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.ps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0 14px}
+.ps > div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 12px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.ps .rel{font:600 12px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.ps .p{font-family:var(--display);font-size:22px;line-height:1.2}
+@media (max-width:520px){.ps{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 </head>
 <body>
@@ -127,13 +132,13 @@ section h2{margin-bottom:14px}
   </header>
 
   <section>
-    <blockquote class="pull">“All of this inner work is necessary and fulfilling in lots of ways, but it doesn’t mean anything unless we take it back out into the world in some shape or form.”<cite>Paul Salinger, World Philosophy, Fall 2026</cite></blockquote>
+    <blockquote class="pull">“All of this inner work is necessary and fulfilling in lots of ways, but it doesn’t mean anything unless we take it back out into the world in some shape or form.”<cite>Paul S., World Philosophy, Fall 2026</cite></blockquote>
   </section>
 
   <section>
     <h2>From past circles</h2>
     <div class="voices">
-      <figure><blockquote>“I’m grateful for the gentle leadership and the guidance that brings focus and brings the rhythm of writing and journaling back into my life.”</blockquote><figcaption>Lisa Feintech, World Philosophy, Fall 2026</figcaption></figure>
+      <figure><blockquote>“I’m grateful for the gentle leadership and the guidance that brings focus and brings the rhythm of writing and journaling back into my life.”</blockquote><figcaption>Lisa F., World Philosophy, Fall 2026</figcaption></figure>
       <figure><blockquote>“I learned I can create this kind of a community in my own life, with intention: give compassionate space to everyone to dig deep.”</blockquote><figcaption>Bennie, Student, Fort Collins, CO</figcaption></figure>
       <figure><blockquote>“This course helped me clarify what matters, helped me move through the challenges I have with my team.”</blockquote><figcaption>Chance Thompson, Big Sky, MT</figcaption></figure>
       <figure><blockquote>“You were all so present and aware, and the feedback and the empathy that you all shared was super meaningful to me.”</blockquote><figcaption>Suzanne Rossi, Coach, Consultant, and Therapist, Philadelphia, PA</figcaption></figure>
@@ -162,7 +167,14 @@ section h2{margin-bottom:14px}
 
   <section id="syllabus">
     <h2>The five weeks</h2>
-    <p>SLOW facilitation: our relationships with <b>S</b>elf, <b>L</b>ife, <b>O</b>thers, and <b>W</b>orld, moving through the Seven Ps of a good life. Dates are for the Wednesday groups; the Tuesday group meets the day before.</p>
+    <p>We move through the Seven Ps of Good Life Writing, held in four relationships: <b>S</b>elf, <b>L</b>ife, <b>O</b>thers, and <b>W</b>orld. That’s SLOW facilitation.</p>
+    <div class="ps" role="list">
+      <div role="listitem"><span class="rel">Self</span><span class="p">Presence</span><span class="p">Purpose</span></div>
+      <div role="listitem"><span class="rel">Life</span><span class="p">Play</span><span class="p">Projects</span></div>
+      <div role="listitem"><span class="rel">Others</span><span class="p">People</span><span class="p">Process</span></div>
+      <div role="listitem"><span class="rel">World</span><span class="p">Perspective</span></div>
+    </div>
+    <p class="note">Dates below are for the Wednesday groups; the Tuesday group meets the day before.</p>
     <ol class="weeks">
       <li>
         <div class="wk"><span class="date">Nov 11</span><span class="theme">Self</span></div>
