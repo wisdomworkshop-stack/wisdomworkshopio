@@ -10,8 +10,8 @@ The Wisdom Workshop website. Plain HTML, no build step. Netlify deploys the `mai
 | `perma.html` | /perma | The Personal Master of Arts |
 | `perma-apply.html` | /perma-apply | perMA application |
 | `perma-tracker.html` | /perma-tracker | perMA requirements and tracker |
-| `good-life-facilitation.html` | /good-life-facilitation | Good Life Facilitation course page (Nov 10 – Dec 18, 2026) |
-| `good-life-facilitation-syllabus.html` | /good-life-facilitation-syllabus | Good Life Facilitation syllabus |
+| `good-life-facilitation.html` | /good-life-facilitation | Good Life Facilitation: course page and syllabus in one (Nov 10 – Dec 18, 2026) |
+| `good-life-facilitation-syllabus.html` | /good-life-facilitation-syllabus | Forwards to /good-life-facilitation#syllabus so old links keep working |
 | `world-philosophy.html` | /world-philosophy | World Philosophy Workshop (Fall 2026, complete) |
 | `world-philosophy-apply.html` | /world-philosophy-apply | World Philosophy application |
 | `writing-a-good-life.html` | /writing-a-good-life | Writing a Good Life |
@@ -22,7 +22,7 @@ Netlify serves `name.html` at `/name`, so link to pages without the `.html`.
 
 ## Naming a new course
 
-One file per course, named for the course: `good-life-arts.html`, with `good-life-arts-syllabus.html` beside it if the syllabus is its own page. When a course ends, leave its page up (old links keep working) and stop featuring it on the homepage.
+One file per course, named for the course: `good-life-arts.html`. Keep the syllabus on the same page (a `#syllabus` section) so there's one place to update. When a course ends, leave its page up (old links keep working) and stop featuring it on the homepage.
 
 ## Each new season: homepage checklist
 
