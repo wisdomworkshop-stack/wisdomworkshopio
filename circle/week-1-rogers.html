@@ -227,12 +227,12 @@ footer .motto{font-family:var(--serif);font-size:22px;letter-spacing:.16em;color
     <p class="small">Who did you listen to, and what did you notice? What surprised you? What will you try differently next time? These notes are the raw material for your process letter. They are kept only in this browser on this device, so copy them out when you are ready.</p>
     <textarea id="notes" style="min-height:170px" placeholder="I sat with…"></textarea>
     <div style="display:flex;gap:10px;align-items:center;margin-top:12px;flex-wrap:wrap">
-      <a class="btn" id="toSean" style="text-decoration:none" href="mailto:wisdomworkshop@gmail.com">Share with Sean</a>
-      <a class="btn" id="toGroup" style="text-decoration:none" href="mailto:wisdomworkshop@gmail.com">Share with the whole group</a>
+      <a class="btn" id="toSean" style="text-decoration:none" href="mailto:sean@wisdomworkshop.io">Share with Sean</a>
+      <a class="btn" id="toGroup" style="text-decoration:none" href="mailto:sean@wisdomworkshop.io">Share with the whole group</a>
       <button class="btn ghost" id="copy" type="button">Copy my field notes</button>
       <span class="small" id="copied"></span>
     </div>
-    <p class="small" style="margin-top:12px">Both buttons open an email to Sean at wisdomworkshop@gmail.com with your notes filled in. "Share with Sean" is for his eyes only. "Share with the whole group" tells him you are glad for him to pass your notes on to the circle. Nothing is sent until you press send.</p>
+    <p class="small" style="margin-top:12px">Both buttons open an email to Sean at sean@wisdomworkshop.io with your notes filled in. "Share with Sean" is for his eyes only. "Share with the whole group" tells him you are glad for him to pass your notes on to the circle. Nothing is sent until you press send.</p>
     <textarea id="copyOut" class="hide" readonly style="margin-top:12px;min-height:160px"></textarea>
   </div>
 
@@ -416,7 +416,7 @@ function mailLink(subject,lead){
     try{navigator.clipboard.writeText(out)}catch(e){}
     body=lead+"\n\n(My notes were too long to fill in automatically. They are copied; I am pasting them below.)\n\n";
   }
-  return "mailto:wisdomworkshop@gmail.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
+  return "mailto:sean@wisdomworkshop.io?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
 }
 $("toSean").addEventListener("click",function(){this.href=mailLink("Week 1 field notes \u00b7 for Sean","Hi Sean, here are my Listening Lab field notes. These are just for you.")});
 $("toGroup").addEventListener("click",function(){this.href=mailLink("Week 1 field notes \u00b7 to share with the group","Hi Sean, here are my Listening Lab field notes. You are welcome to share these with the whole group.")});
