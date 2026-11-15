@@ -152,27 +152,22 @@ footer .motto{font-family:var(--serif);font-size:22px;letter-spacing:.16em;color
   <p style="margin-top:22px">One more thing, easy to miss: the other person has to <strong>receive</strong> it. Your care does not count until it lands. This is why Rogers keeps checking, and why the same is true of the regard we offer ourselves.</p>
 </div></section>
 
-<section id="lab"><div class="wrap">
-  <h4>Practice + play</h4>
-  <h2>The Listening Lab</h2>
-  <p>A quiz on Rogers would test whether you can define congruence. That would miss the point rather exactly. So here is a mirror instead: six moments, and what you would say first.</p>
-
-  <!-- PART 1 -->
-  <div class="card" id="p1">
-    <h3>What do you say first?</h3>
-    <p class="small">Six moments from a facilitator's life. Pick the response closest to what would actually come out of your mouth. Be honest; no one is grading. Rogers's colleague Elias Porter sorted helper responses into five kinds, and all of us have a favourite.</p>
-    <div id="quiz"></div>
+<section id="practice"><div class="wrap">
+  <h4>Practice + play away from the screen</h4>
+  <h2>The key ideas, in practice</h2>
+  <p>Rogers believed the only learning that changes behaviour is the kind you discover yourself. Each idea above has a practice here, and every one of them needs another person.</p>
+  <div class="card" style="border-top:3px solid var(--terra)">
+    <span class="tag">Start here · ten minutes</span>
+    <h3>What kind of helpful listener are you?</h3>
+    <p class="small">Six moments and eight questions. You will see your first move when someone is struggling, and where you stand on being real, prizing, understanding, and presence. Bring your growing edge to the practices below.</p>
+    <a class="btn" style="text-decoration:none;display:inline-block" href="/helpful-listener">Take the Listening Lab</a>
   </div>
 
-</div></section>
-
-<section id="field"><div class="wrap">
-  <h4>Away from the screen</h4>
-  <h2>Take it to a real person</h2>
-  <p>Rogers believed the only learning that changes behaviour is the kind you discover yourself. Try one of these this week.</p>
   <ol class="field">
-    <li><strong>The one rule</strong>In one real disagreement this week, before you make your point, restate the other person's point until <em>they</em> say "yes, that's it." Rogers proposed this in 1951 and predicted you would find it one of the hardest things you have ever tried. Notice what happens to your own position while you do it.</li>
-    <li><strong>Ask to be heard</strong>The reverse practice, and the one facilitators skip. Ask someone to listen to you for ten minutes without fixing anything. You cannot offer a climate you have never stood in.</li>
+    <li><strong>Understanding: the one rule</strong>In one real disagreement this week, before you make your point, restate the other person's point until <em>they</em> say "yes, that's it." Rogers proposed this in 1951 and predicted you would find it one of the hardest things you have ever tried.</li>
+    <li><strong>Prizing: the sunset</strong>Nobody looks at a sunset and asks for the cloud to move a little to the left. Pick one person you tend to mentally improve. For one whole conversation, add nothing and remove nothing.</li>
+    <li><strong>Being real: one true sentence</strong>Once this week, in the middle of leading, hosting, or helping, say one true sentence about where you are. "I'm lost right now." "I'm tired, and glad to be here."</li>
+    <li><strong>Receiving: ask to be heard</strong>Ask someone to listen to you for ten minutes without fixing anything. You cannot offer a climate you have never stood in.</li>
   </ol>
 </div></section>
 
@@ -193,118 +188,5 @@ footer .motto{font-family:var(--serif);font-size:22px;letter-spacing:.16em;color
   <div class="motto">KINDNESS IS INTELLIGENCE</div>
 </div></footer>
 
-<script>
-(function(){
-"use strict";
-var $=function(id){return document.getElementById(id)};
-function el(tag,cls,text){var e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e}
-var store={get:function(k){try{return JSON.parse(localStorage.getItem("glf1_"+k))}catch(e){return null}},set:function(k,v){try{localStorage.setItem("glf1_"+k,JSON.stringify(v))}catch(e){}}};
-
-/* ---------- Part 1 ---------- */
-var TYPES={
-  adv:{name:"Advising",desc:"Evaluating or advising. You have judged the situation and offered a fix."},
-  int:{name:"Interpreting",desc:"Interpreting. You are explaining them to themselves."},
-  rea:{name:"Reassuring",desc:"Reassuring. You are trying to make the feeling smaller."},
-  pro:{name:"Probing",desc:"Probing. You are steering toward what you want to know."},
-  und:{name:"Understanding",desc:"Understanding. You are checking whether you have caught what it is like for them."}
-};
-var SCENES=[
- {ctx:"A participant, right after sharing something long and personal in your circle:",said:"“I shouldn’t have said all that. I always take up too much space.”",o:[
-  ["rea","Not at all. Everyone loved what you shared."],
-  ["adv","Next time, try jotting down your main point before you speak."],
-  ["int","I wonder if that comes from being told to stay quiet when you were young."],
-  ["pro","What makes you think it was too much?"],
-  ["und","You’re left wincing a little, worried that what you gave was more than the room wanted."]]},
- {ctx:"Your co-facilitator, packing up after a session:",said:"“That was flat. I don’t know why we bother with the check-in round.”",o:[
-  ["pro","Which part felt flat to you?"],
-  ["und","You came away discouraged, and the check-in is starting to feel like going through the motions."],
-  ["adv","Let’s cut it to one word each and see if that helps."],
-  ["rea","I thought it went fine. Every group has an off night."],
-  ["int","You’re probably just tired. It’s been a long month for you."]]},
- {ctx:"A friend, over coffee:",said:"“I got the job offer. Everyone says I should be thrilled.”",o:[
-  ["adv","You should take it. You can always leave in a year."],
-  ["int","Sounds like you’re afraid of success."],
-  ["und","Everyone else is celebrating, and you’re not sure the thrill is yours."],
-  ["rea","Congratulations! You’ve earned this. It’ll feel real soon."],
-  ["pro","What’s the salary? And would you have to move?"]]},
- {ctx:"A quiet member of your group, catching you privately afterward:",said:"“I don’t think I belong here. Everyone else is so much further along.”",o:[
-  ["int","That’s imposter syndrome talking."],
-  ["rea","Oh, you absolutely belong. We’re so glad you’re here."],
-  ["pro","Further along in what way?"],
-  ["und","When you look around the circle you feel behind, and it has you wondering if there’s a place for you."],
-  ["adv","Try sharing one small thing next week. It gets easier."]]},
- {ctx:"Someone you mentor:",said:"“I haven’t written in three weeks. Maybe I’m just not a writer.”",o:[
-  ["adv","Set a timer for ten minutes tomorrow morning. Just ten."],
-  ["und","Three weeks of silence, and it’s begun to feel like a verdict on who you are."],
-  ["pro","What was going on three weeks ago when you stopped?"],
-  ["int","I think you stop whenever the work starts to matter."],
-  ["rea","Every writer goes through this. You’re definitely a writer."]]},
- {ctx:"A member of your community, to you, with some heat:",said:"“You say this is a circle of equals, but you decide everything.”",o:[
-  ["rea","I hear you, and I promise your voice matters here."],
-  ["pro","Can you give me an example of a decision I made?"],
-  ["int","I think this might be about more than the group."],
-  ["adv","Then come to the planning meeting and help decide."],
-  ["und","The word ‘equals’ rings hollow to you. From where you sit, the power is all on my side, and that stings."]]}
-];
-var ORDER=["und","adv","rea","pro","int"];
-var qi=0,counts=store.get("counts")||null,picks=[];
-function renderQuiz(){
-  var q=$("quiz");q.innerHTML="";
-  if(qi>=SCENES.length){return renderTally(q)}
-  var s=SCENES[qi];
-  q.appendChild(el("div","progress","Moment "+(qi+1)+" of "+SCENES.length));
-  q.appendChild(el("p","ctx",s.ctx));
-  q.appendChild(el("div","said",s.said));
-  var box=el("div");
-  s.o.forEach(function(o){
-    var b=el("button","opt"+(o[0]==="und"?" und":""));
-    b.type="button";
-    b.appendChild(el("span",null,"“"+o[1]+"”"));
-    b.appendChild(el("span","lab",TYPES[o[0]].desc));
-    b.addEventListener("click",function(){
-      if(box.classList.contains("revealed"))return;
-      b.classList.add("picked");box.classList.add("revealed");
-      picks.push(o[0]);
-      Array.prototype.forEach.call(box.querySelectorAll(".opt"),function(x){x.disabled=true});
-      var n=el("button","btn",qi===SCENES.length-1?"See my pattern":"Next moment");
-      n.type="button";n.style.marginTop="10px";
-      n.addEventListener("click",function(){qi++;renderQuiz();$("p1").scrollIntoView({block:"start"})});
-      q.appendChild(n);n.focus();
-    });
-    box.appendChild(b);
-  });
-  q.appendChild(box);
-}
-function renderTally(q){
-  if(picks.length){counts={};ORDER.forEach(function(k){counts[k]=0});picks.forEach(function(k){counts[k]++});store.set("counts",counts)}
-  q.appendChild(el("div","progress","Your pattern"));
-  var bars=el("div","bars"),max=0,top="und";
-  ORDER.forEach(function(k){if(counts[k]>max){max=counts[k];top=k}});
-  ORDER.forEach(function(k){
-    var r=el("div","bar"+(k==="und"?" und":""));
-    r.appendChild(el("span",null,TYPES[k].name));
-    var t=el("div","track"),i=el("i");i.style.width=(counts[k]/SCENES.length*100)+"%";t.appendChild(i);r.appendChild(t);
-    r.appendChild(el("span",null,String(counts[k])));
-    bars.appendChild(r);
-  });
-  q.appendChild(bars);
-  var msg={
-   und:"You reach for understanding first. Lovely, and worth one suspicion: on a screen, with time to think, the understanding response is easy to spot. Watch whether it is also what comes out at speed, when someone you love is upset.",
-   adv:"Your first move is to help by fixing. It comes from care, and it is usually what people want least in the first minute. Rogers would ask what you are afraid will happen if you leave the problem unsolved a little longer.",
-   rea:"Your first move is to comfort. It is kind, and it quietly tells the person their feeling should be smaller than it is. Try staying in the discomfort with them one sentence longer before you soothe.",
-   pro:"Your first move is a question. Curiosity is a gift, but each question steers, and the person follows your interest rather than their own. Try trading one question for one guess at what it is like for them.",
-   int:"Your first move is to explain. You may well be right. The trouble is that an insight handed over is rarely as useful as one a person arrives at, and it puts you above them. Try keeping the theory to yourself and offering only what you heard."
-  }[top];
-  q.appendChild(el("p",null,msg));
-  q.appendChild(el("p","small","None of the five is wrong. Advice and questions have their hour. Rogers’s point is about sequence: understanding comes first, because until a person feels heard, they cannot really use anything else you offer."));
-  var again=el("button","btn ghost","Try again");again.type="button";
-  again.addEventListener("click",function(){qi=0;picks=[];renderQuiz()});
-  q.appendChild(again);
-}
-if(counts){qi=SCENES.length}
-renderQuiz();
-
-})();
-</script>
 </body>
 </html>
