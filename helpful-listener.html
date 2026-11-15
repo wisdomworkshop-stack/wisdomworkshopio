@@ -289,7 +289,7 @@ function result(st){
   st.appendChild(el("span","tag","Your first move"));
   st.appendChild(el("h3",null,S.name));
   var tied=ORDER.filter(function(k){return k!==r.first&&r.counts[k]===r.counts[r.first]}).map(function(k){return STYLES[k].name});
-  st.appendChild(el("p","ctx",S.move+" That was your choice in "+r.counts[r.first]+" of "+SCENES.length+" moments."+(tied.length?" You have range: it tied with "+tied.join(" and ")+", so read those too by starting over and noticing which you reach for under pressure.":"")));
+  st.appendChild(el("p","ctx",S.move+" That was your choice in "+r.counts[r.first]+" of "+SCENES.length+" moments."+(tied.length?" You have range: it tied with "+tied.join(" and ")+". Notice which one you reach for when you are under pressure.":"")));
   st.appendChild(bars(ORDER.map(function(k){return [k,STYLES[k].name.replace("The ",""),r.counts[k]]}),SCENES.length,"und"));
   var g=el("p");g.appendChild(el("strong",null,"Your strength. "));g.appendChild(document.createTextNode(S.gift));st.appendChild(g);
   var e=el("p");e.appendChild(el("strong",null,"Your tendency to watch. "));e.appendChild(document.createTextNode(S.edge));st.appendChild(e);
