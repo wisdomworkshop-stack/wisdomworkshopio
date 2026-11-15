@@ -11,6 +11,8 @@ The Wisdom Workshop website. Plain HTML, no build step. Netlify deploys the `mai
 | `perma-apply.html` | /perma-apply | perMA application |
 | `perma-tracker.html` | /perma-tracker | perMA requirements and tracker |
 | `good-life-facilitation.html` | /good-life-facilitation | Good Life Facilitation: course page and syllabus in one (Nov 10 – Dec 18, 2026) |
+| `good-life-facilitation-week-1.html` | /good-life-facilitation-week-1 | Public sample of the Week 1 guide (Carl Rogers): three conditions, reading path, listening mirror, invitation |
+| `circle/week-1-rogers.html` | /circle/week-1-rogers | Full Week 1 guide for participants and paid subscribers. Unlisted: not linked from any page, and `_headers` tells search engines not to index anything under /circle/. Anyone with the link can open it. |
 | `good-life-facilitation-syllabus.html` | /good-life-facilitation-syllabus | Forwards to /good-life-facilitation#syllabus so old links keep working |
 | `world-philosophy.html` | /world-philosophy | World Philosophy Workshop (Fall 2026, complete) |
 | `world-philosophy-apply.html` | /world-philosophy-apply | World Philosophy application |

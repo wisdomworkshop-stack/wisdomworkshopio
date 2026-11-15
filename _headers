@@ -1,0 +1,3 @@
+# Circle pages are unlisted: shared by link with enrolled participants and paid subscribers.
+/circle/*
+  X-Robots-Tag: noindex, nofollow
